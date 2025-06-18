@@ -9,98 +9,195 @@
 </head>
 
 <body>
+
+    <!-- BARRA SUPERIOR CON LOGO (INICIAL) -->
+    <div id="topBar" class="top-bar">
+        <div class="logo">
+            <a href="/" class="logoImg">
+                <img src="IMG/logofinal.png" alt="Logo de TP1" />
+            </a>
+            <h1>Furry Travels</h1>
+        </div>
+    </div>
+
+    <!-- SLIDER con menú vertical -->
     <main>
         <header class="sliderPrincipal">
             <div class="slider"></div>
+
+            <!-- MENÚ VERTICAL -->
+            <nav class="menu-vertical" id="menuVertical">
+                <a href="#lugares"><button><strong>LUGARES</strong></button></a>
+                <a href="#hospedaje"><button><strong>HOSPEDAJE</strong></button></a>
+                <a href="#contacto"><button><strong>CONTACTO</strong></button></a>
+            </nav>
+        </header>
+
+        <!-- MENÚ STICKY -->
+        <div class="header-sticky-bar sticky-layout" id="menuSticky">
             <div class="logo">
                 <a href="/" class="logoImg">
                     <img src="IMG/logofinal.png" alt="Logo de TP1" />
                 </a>
                 <h1>Furry Travels</h1>
             </div>
-            <nav class="menu">
-                <a href="#lugares"><button>Lugares</button></a>
-                <a href="#hospedaje"><button>Hospedaje</button></a>
-                <a href="#contacto"><button>Contacto</button></a>
+
+            <!-- Botón hamburguesa -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">☰</button>
+
+            <!-- Menú de navegación -->
+            <nav class="menu" id="navMenu">
+                <a href="#lugares"><button>LUGARES</button></a>
+                <a href="#hospedaje"><button>HOSPEDAJE</button></a>
+                <a href="#contacto"><button>CONTACTO</button></a>
             </nav>
-        </header>
+        </div>
+
+
+
         <div class="sectionContenedor">
-        <section id="lugares" class="seclugares">
-            <header>
-                <h2>Lugares</h2>
-            </header>
-            <hr class="linea" />
-            <div class="contentCards">
-                <article class="card">
-                    <img src="IMG/2.png" alt="Imagen de un lugar" class="imgCard" />
-                    <div class="cardText">
-                        <h3>Nombre del lugar</h3>
-                        <p>Descripción breve del lugar.</p>
-                        <button>Ver más</button>
+            <section id="lugares" class="seclugares">
+                <header>
+                    <h2>LUGARES</h2>
+                </header>
+                <hr class="linea" />
+                <div class="contentCards">
+                    <div class="slider-wrapper">
+                        <button class="arrow left" id="prevBtn">‹</button>
+
+                        <div class="slider-container" id="cardSlider">
+                            <article class="card">
+                                <img src="IMG/2.png" alt="Imagen de un lugar" class="imgCard" />
+                                <div class="cardText">
+                                    <h3>Nombre del lugar</h3>
+                                    <p>Descripción breve del lugar.</p>
+                                    <button>Ver más</button>
+                                </div>
+
+                            </article>
+                            <article class="card">
+                                <img src="IMG/2.png" alt="Imagen de un lugar" class="imgCard" />
+                                <div class="cardText">
+                                    <h3>Nombre del lugar</h3>
+                                    <p>Descripción breve del lugar.</p>
+                                    <button>Ver más</button>
+                                </div>
+                            </article>
+                            <article class="card">
+                                <img src="IMG/2.png" alt="Imagen de un lugar" class="imgCard" />
+                                <div class="cardText">
+                                    <h3>Nombre del lugar</h3>
+                                    <p>Descripción breve del lugar.</p>
+                                    <button>Ver más</button>
+                                </div>
+                            </article>
+                            <article class="card">
+                                <img src="IMG/2.png" alt="Imagen de un lugar" class="imgCard" />
+                                <div class="cardText">
+                                    <h3>Nombre del lugar</h3>
+                                    <p>Descripción breve del lugar.</p>
+                                    <button>Ver más</button>
+                                </div>
+                            </article>
+                        </div>
+
+                        <button class="arrow right" id="nextBtn">›</button>
                     </div>
 
-                </article>
-                <article class="card">
-                    <img src="IMG/2.png" alt="Imagen de un lugar" class="imgCard" />
-                    <div class="cardText">
-                        <h3>Nombre del lugar</h3>
-                        <p>Descripción breve del lugar.</p>
-                        <button>Ver más</button>
+                </div>
+
+            </section>
+
+
+            <section id="hospedaje" class="sechospedaje">
+                <div class="vertical-title">HOSPEDAJE</div>
+                <div class="accordion-container">
+                    <div class="accordion-item" style="background-image: url('IMG/dalmatahotel.png');">
+                        <a href="#HOTELES">HOTELES</a>
                     </div>
-                </article>
-                <article class="card">
-                    <img src="IMG/2.png" alt="Imagen de un lugar" class="imgCard" />
-                    <div class="cardText">
-                        <h3>Nombre del lugar</h3>
-                        <p>Descripción breve del lugar.</p>
-                        <button>Ver más</button>
+                    <div class="accordion-item" style="background-image: url('IMG/salchiDepto.png');">
+                        <a href="#DEPARTAMENTOS">DEPARTAMENTOS</a>
                     </div>
-                </article>
-                <article class="card">
-                    <img src="IMG/2.png" alt="Imagen de un lugar" class="imgCard" />
-                    <div class="cardText">
-                        <h3>Nombre del lugar</h3>
-                        <p>Descripción breve del lugar.</p>
-                        <button>Ver más</button>
+                    <div class="accordion-item" style="background-image: url('IMG/grandanesCasa.png');">
+                        <a href="#CASAS">CASAS</a>
                     </div>
-                </article>
+                </div>
+            </section>
 
-            </div>
+            <section id="contacto" class="seccontacto">
+                <header>
+                    <h2>CONTACTO</h2>
+                </header>
+                <form action="#" method="post" class="formulario">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
 
-        </section>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
 
+                    <label for="mensaje">Consulta:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-        <section id="hospedaje" class="sechospedaje">
-            <div class="vertical-title">Hospedajes</div>
-            <div class="accordion-container">
-              <div class="accordion-item" style="background-image: url('IMG/dalmatahotel.png');">
-                <a href="#HOTELES">HOTELES</a>
-              </div>
-              <div class="accordion-item" style="background-image: url('IMG/salchiDepto.png');">
-                <a href="#DEPARTAMENTOS">DEPARTAMENTOS</a>
-              </div>
-              <div class="accordion-item" style="background-image: url('IMG/grandanesCasa.png');">
-                <a href="#CASAS">CASAS</a>
-              </div>
-            </div>
-          </section>
+                    <label for="intereses">¿Qué servicios te interesan?</label>
+                    <select id="intereses" name="intereses[]" multiple required>
+                        <option value="hospedaje">Hospedaje Pet Friendly</option>
+                        <option value="excursiones">Excursiones con mascotas</option>
+                        <option value="transporte">Transporte especializado</option>
+                        <option value="otros">Otros</option>
+                    </select>
 
-        <section id="contacto" class="seccontacto">
-            <header>
-                <h2>Contacto</h2>
-            </header>
-            <div>
+                    <label>
+                        <input type="checkbox" name="acepta" required>
+                        Acepto los términos y condiciones
+                    </label>
 
-            </div>
+                    <button type="submit">Enviar consulta</button>
+                </form>
 
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-        </section>
+                <div>
+
+                </div>
+
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+            </section>
         </div>
     </main>
-    <footer id="footer"></footer>
+    <footer class="footerTP">
+        <p><strong>Alumna:</strong> Sukevicius Samanta - <strong>DNI:</strong> 32.584.131</p>
+        <p><strong>Materia:</strong> Maquetado y Desarrollo Web - <strong>Comisión:</strong> DWN1AP</p>
+        <p><strong>Profesor:</strong> Carlos Ferrer</p>
+        <p>Entrega correspondiente al 1° cuatrimestre - Escuela Da Vinci - Año 2025</p>
+    </footer>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuSticky = document.getElementById('menuSticky');
+            const menuVertical = document.getElementById('menuVertical');
+            const topBar = document.getElementById('topBar');
+
+            const toggleMenus = () => {
+                const hasScrolledPast = window.scrollY > window.innerHeight * 0.5;
+                menuSticky.style.display = hasScrolledPast ? 'flex' : 'none';
+                menuVertical.style.display = hasScrolledPast ? 'none' : 'flex';
+                topBar.style.display = hasScrolledPast ? 'none' : 'flex';
+            };
+
+            toggleMenus();
+            window.addEventListener('scroll', toggleMenus);
+
+            // Hamburguesa
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const navMenu = document.getElementById('navMenu');
+
+            hamburgerBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+        });
+    </script> -->
+
+<script src="script.js"></script>
 </body>
 
 </html>
