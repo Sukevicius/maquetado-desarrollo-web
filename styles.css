@@ -398,6 +398,7 @@ h2 {
     .cardText button {
         font-size: 0.75rem;
         padding: 6px;
+        border: none;
     }
 }
 
