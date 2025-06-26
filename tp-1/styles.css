@@ -65,15 +65,15 @@ h2 {
 
     0%,
     100% {
-        background-image: url('IMG/2.png');
+        background-image: url('img/2.png');
     }
 
     33% {
-        background-image: url('IMG/perro-auto.png');
+        background-image: url('img/perroauto.png');
     }
 
     66% {
-        background-image: url('IMG/perro-jugando2.png');
+        background-image: url('img/perrojugando2.png');
     }
 }
 
