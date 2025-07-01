@@ -67,39 +67,69 @@
 
                         <div class="slider-container" id="cardSlider">
                             <article class="card">
-                                <img src="img/2.png" alt="Imagen de un lugar" class="imgCard" />
+                                <img src="img/puerto-blest-y-cascada.jpg" alt="Bariloche" class="imgCard" />
                                 <div class="cardText">
                                     <h3>Bariloche, Argentina</h3>
                                     <p>Pet friendly: Muchos alojamientos y cervecerías artesanales aceptan mascotas.</p>
-                                    <button>Ver más</button>
+                                    <a href="pages-cards/bariloche.html" target="_blank" class="card-button">Ver más</a>
                                 </div>
-
                             </article>
+
                             <article class="card">
-                                <img src="img/2.png" alt="Imagen de un lugar" class="imgCard" />
+                                <img src="img/SanSebastian.png" alt="San Sebastián" class="imgCard" />
                                 <div class="cardText">
                                     <h3>San Sebastián, España</h3>
                                     <p>Pet friendly: Restaurantes y tiendas adaptadas para animales.</p>
-                                    <button>Ver más</button>
+                                    <a href="san-sebastian.html" target="_blank" class="card-button">Ver más</a>
                                 </div>
                             </article>
+
                             <article class="card">
-                                <img src="img/2.png" alt="Imagen de un lugar" class="imgCard" />
+                                <img src="img/portland-city.jpg" alt="Portland" class="imgCard" />
                                 <div class="cardText">
                                     <h3>Portland, Oregón (EE.UU.)</h3>
                                     <p>Pet friendly: Cafés con menú para perros, parques y tiendas exclusivas.</p>
-                                    <button>Ver más</button>
+                                    <a href="portland.html" target="_blank" class="card-button">Ver más</a>
                                 </div>
                             </article>
+
                             <article class="card">
-                                <img src="img/2.png" alt="Imagen de un lugar" class="imgCard" />
+                                <img src="img/garda-italy.jpg" alt="Garda" class="imgCard" />
                                 <div class="cardText">
                                     <h3>Lago di Garda, Italia</h3>
                                     <p>Pet friendly: Embarcaciones, restaurantes y hoteles dog-friendly.</p>
-                                    <button>Ver más</button>
+                                    <a href="lago-garda.html" target="_blank" class="card-button">Ver más</a>
+                                </div>
+                            </article>
+
+                            <article class="card">
+                                <img src="img/garda-italy.jpg" alt="Garda" class="imgCard" />
+                                <div class="cardText">
+                                    <h3>Lago di Garda, Italia</h3>
+                                    <p>Pet friendly: Embarcaciones, restaurantes y hoteles dog-friendly.</p>
+                                    <a href="lago-garda.html" target="_blank" class="card-button">Ver más</a>
+                                </div>
+                            </article>
+
+                            <article class="card">
+                                <img src="img/garda-italy.jpg" alt="Garda" class="imgCard" />
+                                <div class="cardText">
+                                    <h3>Lago di Garda, Italia</h3>
+                                    <p>Pet friendly: Embarcaciones, restaurantes y hoteles dog-friendly.</p>
+                                    <a href="lago-garda.html" target="_blank" class="card-button">Ver más</a>
+                                </div>
+                            </article>
+
+                            <article class="card">
+                                <img src="img/garda-italy.jpg" alt="Garda" class="imgCard" />
+                                <div class="cardText">
+                                    <h3>Lago di Garda, Italia</h3>
+                                    <p>Pet friendly: Embarcaciones, restaurantes y hoteles dog-friendly.</p>
+                                    <a href="lago-garda.html" target="_blank" class="card-button">Ver más</a>
                                 </div>
                             </article>
                         </div>
+
 
                         <button class="arrow right" id="nextBtn">›</button>
                     </div>
@@ -128,34 +158,39 @@
                 <header>
                     <h2>CONTACTO</h2>
                 </header>
-                <form action="#" method="post" class="formulario">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                <div class="video-form-container">
+                    <video class="video-bg" autoplay loop muted>
+                        <source src="img/familia.mp4" type="video/mp4">
+                    </video>
 
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
+                    <form action="#" method="post" class="formulario">
+                        <div class="form-logo">
+                            <img src="img/logo-furry-png.png" alt="Logo Furry Travels" />
+                        </div>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
 
-                    <label for="mensaje">Consulta:</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
 
-                    <label for="intereses">¿Qué servicios te interesan?</label>
-                    <select id="intereses" name="intereses[]" multiple required>
-                        <option value="hospedaje">Hospedaje Pet Friendly</option>
-                        <option value="excursiones">Excursiones con mascotas</option>
-                        <option value="transporte">Transporte especializado</option>
-                        <option value="otros">Otros</option>
-                    </select>
+                        <label for="mensaje">Consulta:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-                    <label>
-                        <input type="checkbox" name="acepta" required>
-                        Acepto los términos y condiciones
-                    </label>
+                        <label for="intereses">¿Qué servicios te interesan?</label>
+                        <select id="intereses" name="intereses[]" multiple required>
+                            <option value="hospedaje">Hospedaje Pet Friendly</option>
+                            <option value="excursiones">Excursiones con mascotas</option>
+                            <option value="transporte">Transporte especializado</option>
+                            <option value="otros">Otros</option>
+                        </select>
 
-                    <button type="submit">Enviar consulta</button>
-                </form>
+                        <label>
+                            <input type="checkbox" name="acepta" required>
+                            Acepto los términos y condiciones
+                        </label>
 
-                <div>
-
+                        <button type="submit">Enviar consulta</button>
+                    </form>
                 </div>
 
             </section>
@@ -167,31 +202,6 @@
         <p><strong>Profesor:</strong> Carlos Ferrer</p>
         <p>Entrega correspondiente al 1° cuatrimestre - Escuela Da Vinci - Año 2025</p>
     </footer>
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuSticky = document.getElementById('menuSticky');
-            const menuVertical = document.getElementById('menuVertical');
-            const topBar = document.getElementById('topBar');
-
-            const toggleMenus = () => {
-                const hasScrolledPast = window.scrollY > window.innerHeight * 0.5;
-                menuSticky.style.display = hasScrolledPast ? 'flex' : 'none';
-                menuVertical.style.display = hasScrolledPast ? 'none' : 'flex';
-                topBar.style.display = hasScrolledPast ? 'none' : 'flex';
-            };
-
-            toggleMenus();
-            window.addEventListener('scroll', toggleMenus);
-
-            // Hamburguesa
-            const hamburgerBtn = document.getElementById('hamburgerBtn');
-            const navMenu = document.getElementById('navMenu');
-
-            hamburgerBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('show');
-            });
-        });
-    </script> -->
 
     <script src="script.js"></script>
 </body>

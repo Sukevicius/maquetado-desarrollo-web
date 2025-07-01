@@ -19,11 +19,13 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 body {
     background-color: #EAE6DF;
     color: #1E5AA8;
     font-size: 16px;
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 main {
@@ -276,7 +278,7 @@ h2 {
 
 .card img {
     width: 100%;
-    height: auto;
+    height: 250px;
     border-radius: 12px 12px 0 0;
     object-fit: cover;
     /* display: block; */
@@ -309,6 +311,7 @@ h2 {
     font-size: 1rem;
     line-height: 1.2;
     margin-bottom: 0.5rem;
+
 }
 
 .cardText p {
@@ -317,20 +320,48 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
+.cardText h3,
+.cardText p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* máx. 2 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .cardText button {
     padding: 8px;
     font-size: 0.9rem;
-    border: 1px solid #1E5AA8;
     background-color: white;
     color: #1E5AA8;
-    border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
     flex-shrink: 0;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
 }
+.card-button {
+  display: inline-block;
+  padding: 8px;
+  font-size: 0.9rem;
+  background-color: white;
+  color: #1E5AA8;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
+.card-button:hover {
+  background-color: #1E5AA8;
+  color: white;
+}
 .slider-wrapper {
     position: relative;
     width: 100%;
@@ -344,13 +375,19 @@ h2 {
     scroll-behavior: smooth;
     gap: 16px;
     scroll-snap-type: x mandatory;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0 1rem;
+    white-space: nowrap;
 }
 
 .slider-container .card {
     display: flex;
     flex-direction: column;
     height: auto;
-    flex: 0 0 250px;
+    flex: 0 0 auto;
+    width: 250px;
+    max-width: 90%;
     scroll-snap-align: start;
     background-color: #F7A37C;
     border-radius: 12px;
@@ -460,6 +497,18 @@ h2 {
 /* =====================
    Sección Contacto
    ===================== */
+.video-form-container {
+    display: flex;
+    width: 100%;
+}
+
+.video-bg {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+}
+
 .seccontacto {
     width: 100%;
     display: flex;
@@ -494,16 +543,26 @@ h2 {
 }
 
 .formulario {
-    width: 100%;
+    width: 40%;
     background-color: #EAE6DF;
     padding: 24px;
-    border-radius: 12px;
+    border-radius: 0 12px 12px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     /* max-width: 600px; */
     /* margin: 32px auto; */
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+/* Responsive: en pantallas chicas que se apilen */
+@media (max-width: 1024px) {
+
+    .video-bg,
+    .formulario {
+        width: 100%;
+        border-radius: 12px;
+    }
 }
 
 .formulario label {
@@ -545,6 +604,11 @@ h2 {
 
 .formulario button:hover {
     background-color: #1E5AA8;
+}
+
+.form-logo img{
+    width: 100%;
+    height: 100%;
 }
 
 /* =====================
