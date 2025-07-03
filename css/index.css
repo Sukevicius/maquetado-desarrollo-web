@@ -86,7 +86,12 @@ h2 {
     z-index: 5;
 }
 
-.menu-vertical a button {
+.menu-vertical a{
+    text-decoration: none;
+    color: var(--pantone-blue-iolite);
+}
+
+.menu-vertical .button {
     width: 160px;
     background-color: var(--pantone-habanero-gold);
     color: var(--pantone-blue-iolite);
@@ -97,9 +102,11 @@ h2 {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
 }
 
-.menu-vertical a button:hover {
+.menu-vertical .button:hover {
     background-color: var(--pantone-blue-iolite);
     color: white;
 }
@@ -339,6 +346,7 @@ h2 {
 .accordion-container {
     flex: 1;
     display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
 }
 
@@ -425,7 +433,7 @@ h2 {
     border-radius: 0 12px 12px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     gap: 16px;
-    
+
 }
 
 
@@ -475,10 +483,10 @@ h2 {
     width: 250px;
 }
 
-   .form-logo {
-        display: flex;
-        justify-content: center;
-    }
+.form-logo {
+    display: flex;
+    justify-content: center;
+}
 
 /* Responsive: en pantallas chicas que se apilen */
 @media (max-width: 1024px) {
@@ -488,7 +496,7 @@ h2 {
         gap: 20px;
     }
 
- 
+
 
     .form-logo img {
         width: 100px !important;
