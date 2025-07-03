@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mostrar u ocultar menú según scroll
   const toggleMenus = () => {
-    const hasScrolledPast = window.scrollY > window.innerHeight * 0.5;
+    const hasScrolledPast = window.scrollY > window.innerHeight;
     menuSticky.style.display = hasScrolledPast ? 'flex' : 'none';
     menuVertical.style.display = hasScrolledPast ? 'none' : 'flex';
     topBar.style.display = hasScrolledPast ? 'none' : 'flex';

@@ -1,0 +1,165 @@
+/* =====================
+   🎨 Paleta de colores de referencia
+===================== */
+
+/* =====================
+   Tipografía y colores base
+===================== */
+
+:root{
+    --pantone-mandarin-orange: #F35B31;
+    --pantone-habanero-gold:   #FFD04C;
+    --pantone-muskmelon:       #F7A37C;
+    --pantone-aquarelle:       #5CB8B2;
+    --pantone-blue-iolite:     #1E5AA8;
+    --pantone-tofu:            #EAE6DF;
+    --border-radius-l: 12px;
+    --border-radius-m: 8px;
+    --border-radius-s: 6px;
+}
+
+body {
+  background-color: #EAE6DF;
+  color: var( --pantone-blue-iolite);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: var( --pantone-blue-iolite);
+}
+
+/* =====================
+   Header Sticky
+===================== */
+.header-sticky-bar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 208, 76, 0.9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  z-index: 100;
+  backdrop-filter: blur(5px);
+  border-bottom: 4px solid var(--pantone-muskmelon);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-sticky-bar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-sticky-bar .logo h1 {
+  font-size: 1.5rem;
+  color: var( --pantone-blue-iolite);
+}
+
+.header-sticky-bar nav.menu {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.header-sticky-bar nav.menu a button {
+  background-color: transparent;
+  color: var( --pantone-blue-iolite);
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header-sticky-bar nav.menu a button:hover {
+  background-color: var( --pantone-blue-iolite);
+  color: white;
+}
+
+/* Hamburguesa */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var( --pantone-blue-iolite);
+  cursor: pointer;
+}
+
+/* Logo img */
+.logo a img {
+  background-color: transparent;
+  max-width: 40px;
+  max-height: 40px;
+  transition: all 0.7s;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .header-sticky-bar nav.menu {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: var(--pantone-habanero-gold);
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    padding: 16px;
+    border-radius: var( --border-radius-m);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .header-sticky-bar nav.menu.show {
+    display: flex;
+  }
+}
+
+/* =====================
+   Footer
+===================== */
+.footerTP {
+  background-color: rgba(255,208,76,0.7);
+  color: var(--pantone-blue-iolite);
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border-top: 4px solid var(--pantone-muskmelon);
+}
+
+.footerTP strong {
+  color: var( --pantone-blue-iolite);
+}
