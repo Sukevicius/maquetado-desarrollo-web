@@ -85,6 +85,9 @@ p {
   font-size: 1.5rem;
   color: var(--pantone-blue-iolite);
 }
+.header-sticky-bar nav.menu a{
+  text-decoration: none;
+}
 
 .header-sticky-bar nav.menu {
   display: flex;
@@ -92,7 +95,7 @@ p {
   gap: 12px;
 }
 
-.header-sticky-bar nav.menu a button {
+.header-sticky-bar nav.menu .button {
   background-color: transparent;
   color: var(--pantone-blue-iolite);
   border: none;
@@ -103,7 +106,7 @@ p {
   transition: background-color 0.3s;
 }
 
-.header-sticky-bar nav.menu a button:hover {
+.header-sticky-bar nav.menu .button:hover {
   background-color: var(--pantone-blue-iolite);
   color: white;
 }
