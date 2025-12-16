@@ -1,0 +1,280 @@
+{
+  "destinos": {
+    "bariloche": {
+      "nombre": "Bariloche (Río Negro), Argentina",
+      "imagen": "../img/img-destinos/Bariloche (Río Negro)/Bariloche (Río Negro).jpg",
+      "actividades": [
+        {
+          "id": "villa-coihues",
+          "nombre": "Villa Coihues",
+          "tipoActividad": "senderos",
+          "descripcion": "Caminata fácil de 5km bordeando el lago Moreno. Ideal para perros de todas las edades.",
+          "imagen": "../img/img-destinos/Bariloche (Río Negro)/Bariloche (Río Negro).jpg",
+          "grupoPersonas": "1-2",
+          "duracion": "2-3 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Correa obligatoria, agua para tu mascota",
+          "mejorEpoca": "Primavera y Verano"
+        },
+        {
+          "id": "playa-bonita",
+          "nombre": "Playa Bonita",
+          "tipoActividad": "playas",
+          "descripcion": "Playa del lago Nahuel Huapi con sector habilitado para perros. Aguas cristalinas.",
+          "imagen": "../img/img-destinos/Bariloche (Río Negro)/Bariloche (Río Negro).jpg",
+          "grupoPersonas": "grupo",
+          "duracion": "4-6 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Bolsas para residuos, agua",
+          "mejorEpoca": "Verano"
+        },
+        {
+          "id": "circuito-chico",
+          "nombre": "Circuito Chico",
+          "tipoActividad": "parques",
+          "descripcion": "Recorrido panorámico con múltiples paradas. Permite mascotas en áreas habilitadas.",
+          "imagen": "../img/img-destinos/Bariloche (Río Negro)/Bariloche (Río Negro).jpg",
+          "grupoPersonas": "3-4",
+          "duracion": "5-7 horas",
+          "dificultad": "Moderada",
+          "requisitos": "Vehículo propio, correa",
+          "mejorEpoca": "Todo el año"
+        },
+        {
+          "id": "parque-municipal",
+          "nombre": "Parque Municipal",
+          "tipoActividad": "dog-parks",
+          "descripcion": "Parque urbano con zona especial para perros sin correa. Juegos y obstáculos caninos.",
+          "imagen": "../img/img-destinos/Bariloche (Río Negro)/Bariloche (Río Negro).jpg",
+          "grupoPersonas": "1-2",
+          "duracion": "1-2 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Vacunas al día",
+          "mejorEpoca": "Todo el año"
+        }
+      ]
+    },
+    "sanmartin": {
+      "nombre": "San Martín de los Andes (Neuquén), Argentina",
+      "imagen": "../img/img-destinos/San Martín de los Andes (Neuquén)/San Martín de los Andes (Neuquén).jpg",
+      "actividades": [
+        {
+          "id": "lago-lacar",
+          "nombre": "Paseos por Lago Lácar",
+          "tipoActividad": "parques",
+          "descripcion": "Circuito costero pet-friendly con vistas panorámicas. Ideal para caminatas tranquilas.",
+          "imagen": "../img/img-destinos/San Martín de los Andes (Neuquén)/San Martín de los Andes (Neuquén).jpg",
+          "grupoPersonas": "1-2",
+          "duracion": "2-3 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Correa, agua",
+          "mejorEpoca": "Primavera y Verano"
+        }
+      ]
+    },
+    "villaangostura": {
+      "nombre": "Villa La Angostura (Neuquén), Argentina",
+      "imagen": "../img/img-destinos/Villa La Angostura (Neuquén)/Villa La Angostura (Neuquén).jpg",
+      "actividades": [
+        {
+          "id": "bosque-arrayanes",
+          "nombre": "Bosque de Arrayanes",
+          "tipoActividad": "senderos",
+          "descripcion": "Sendero único con bosque de arrayanes centenarios. Permite mascotas con correa.",
+          "imagen": "../img/img-destinos/Villa La Angostura (Neuquén)/Villa La Angostura (Neuquén).jpg",
+          "grupoPersonas": "3-4",
+          "duracion": "3-4 horas",
+          "dificultad": "Moderada",
+          "requisitos": "Correa obligatoria, entrada al parque",
+          "mejorEpoca": "Primavera y Verano"
+        }
+      ]
+    },
+    "elbolson": {
+      "nombre": "El Bolsón (Río Negro), Argentina",
+      "imagen": "../img/img-destinos/El Bolsón/El Bolsón.jpg",
+      "actividades": [
+        {
+          "id": "feria-artesanal",
+          "nombre": "Feria Artesanal",
+          "tipoActividad": "parques",
+          "descripcion": "Feria regional al aire libre donde se permiten mascotas. Artesanías, comidas y música en vivo.",
+          "imagen": "../img/img-destinos/El Bolsón/El Bolsón.jpg",
+          "grupoPersonas": "grupo",
+          "duracion": "2-4 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Correa",
+          "mejorEpoca": "Todo el año"
+        },
+        {
+          "id": "piltriquitron",
+          "nombre": "Senderos del Piltriquitrón",
+          "tipoActividad": "senderos",
+          "descripcion": "Red de senderos de montaña con cascadas y miradores. Pet-friendly con correa.",
+          "imagen": "../img/img-destinos/El Bolsón/El Bolsón.jpg",
+          "grupoPersonas": "3-4",
+          "duracion": "4-6 horas",
+          "dificultad": "Moderada",
+          "requisitos": "Buen estado físico, agua, protector solar",
+          "mejorEpoca": "Primavera y Verano"
+        }
+      ]
+    },
+    "sanrafael": {
+      "nombre": "San Rafael (Mendoza), Argentina",
+      "imagen": "../img/img-destinos/San Rafael/San Rafael.jpg",
+      "actividades": [
+        {
+          "id": "dique-atuel",
+          "nombre": "Dique El Nihuil",
+          "tipoActividad": "parques",
+          "descripcion": "Lago artificial rodeado de montañas. Ideal para caminatas ribereñas con tu mascota.",
+          "imagen": "../img/img-destinos/San Rafael/San Rafael.jpg",
+          "grupoPersonas": "1-2",
+          "duracion": "2-3 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Correa, agua",
+          "mejorEpoca": "Otoño y Primavera"
+        }
+      ]
+    },
+    "villageneralbelgrano": {
+      "nombre": "Villa General Belgrano (Córdoba), Argentina",
+      "imagen": "../img/img-destinos/Villa General Belgrano (Córdoba)/Villa General Belgrano3.jpg",
+      "actividades": [
+        {
+          "id": "senderos-calamuchita",
+          "nombre": "Senderos de Calamuchita",
+          "tipoActividad": "senderos",
+          "descripcion": "Red de senderos serranos con arroyos y cascadas. Pet-friendly todo el año.",
+          "imagen": "../img/img-destinos/Villa General Belgrano (Córdoba)/Villa General Belgrano3.jpg",
+          "grupoPersonas": "3-4",
+          "duracion": "3-5 horas",
+          "dificultad": "Moderada",
+          "requisitos": "Correa, agua, protector solar",
+          "mejorEpoca": "Otoño y Primavera"
+        }
+      ]
+    },
+    "tandil": {
+      "nombre": "Tandil (Buenos Aires), Argentina",
+      "imagen": "../img/img-destinos/Tandil (Buenos Aires)/Tandil (Buenos Aires).jpg",
+      "actividades": [
+        {
+          "id": "sierras-tandil",
+          "nombre": "Sierras de Tandil",
+          "tipoActividad": "senderos",
+          "descripcion": "Circuitos de senderismo con vistas panorámicas. Cerro Centinela, La Movediza y más.",
+          "imagen": "../img/img-destinos/Tandil (Buenos Aires)/Tandil (Buenos Aires).jpg",
+          "grupoPersonas": "3-4",
+          "duracion": "4-6 horas",
+          "dificultad": "Moderada",
+          "requisitos": "Calzado adecuado, agua, correa",
+          "mejorEpoca": "Otoño y Primavera"
+        },
+        {
+          "id": "parque-independencia",
+          "nombre": "Parque Independencia",
+          "tipoActividad": "parques",
+          "descripcion": "Parque urbano con lago artificial. Ideal para paseos con mascotas.",
+          "imagen": "../img/img-destinos/Tandil (Buenos Aires)/Tandil (Buenos Aires).jpg",
+          "grupoPersonas": "1-2",
+          "duracion": "1-2 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Correa",
+          "mejorEpoca": "Todo el año"
+        }
+      ]
+    },
+    "mardelaspampas": {
+      "nombre": "Mar de las Pampas (Buenos Aires), Argentina",
+      "imagen": "../img/img-destinos/Mar de las Pampas/Mar de las Pampas.jpg",
+      "actividades": [
+        {
+          "id": "playa-mar-pampas",
+          "nombre": "Playa Mar de las Pampas",
+          "tipoActividad": "playas",
+          "descripcion": "Playa con horarios permitidos para mascotas. Temporada baja: todo el día. Verano: horarios específicos.",
+          "imagen": "../img/img-destinos/Mar de las Pampas/Mar de las Pampas.jpg",
+          "grupoPersonas": "1-2",
+          "duracion": "3-5 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Correa, bolsas para residuos",
+          "mejorEpoca": "Otoño e Invierno"
+        },
+        {
+          "id": "bosque-pinos",
+          "nombre": "Bosque de Pinos",
+          "tipoActividad": "parques",
+          "descripcion": "Circuito de caminatas por el bosque de pinos. Sombreado y tranquilo para pasear con mascotas.",
+          "imagen": "../img/img-destinos/Mar de las Pampas/Mar de las Pampas.jpg",
+          "grupoPersonas": "grupo",
+          "duracion": "2-3 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Correa",
+          "mejorEpoca": "Todo el año"
+        }
+      ]
+    },
+    "colonia": {
+      "nombre": "Colonia del Sacramento, Uruguay",
+      "imagen": "../img/img-destinos/Colonia del Sacramento (Uruguay)/Colonia del Sacramento (Uruguay).jpg",
+      "actividades": [
+        {
+          "id": "barrio-historico",
+          "nombre": "Barrio Histórico",
+          "tipoActividad": "parques",
+          "descripcion": "Recorrido por calles empedradas del siglo XVII. Patrimonio UNESCO pet-friendly.",
+          "imagen": "../img/img-destinos/Colonia del Sacramento (Uruguay)/Colonia del Sacramento (Uruguay).jpg",
+          "grupoPersonas": "3-4",
+          "duracion": "2-4 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Correa obligatoria",
+          "mejorEpoca": "Otoño y Primavera"
+        },
+        {
+          "id": "rambla-colonia",
+          "nombre": "Rambla Costanera",
+          "tipoActividad": "parques",
+          "descripcion": "Paseo costero a orillas del Río de la Plata. Ideal para atardeceres con tu mascota.",
+          "imagen": "../img/img-destinos/Colonia del Sacramento (Uruguay)/Colonia del Sacramento (Uruguay).jpg",
+          "grupoPersonas": "1-2",
+          "duracion": "1-2 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Ninguno especial",
+          "mejorEpoca": "Todo el año"
+        }
+      ]
+    },
+    "florianopolis": {
+      "nombre": "Florianópolis, Brasil",
+      "imagen": "../img/img-destinos/Florianópolis (Brasil)/Florianópolis (Brasil).jpg",
+      "actividades": [
+        {
+          "id": "praia-cachorro",
+          "nombre": "Praia do Cachorro",
+          "tipoActividad": "playas",
+          "descripcion": "Una de las pocas playas de Floripa que permite mascotas todo el día. Arena blanca y aguas tranquilas.",
+          "imagen": "../img/img-destinos/Florianópolis (Brasil)/Florianópolis (Brasil).jpg",
+          "grupoPersonas": "1-2",
+          "duracion": "3-5 horas",
+          "dificultad": "Fácil",
+          "requisitos": "Certificado sanitario, vacunas al día",
+          "mejorEpoca": "Otoño y Primavera"
+        },
+        {
+          "id": "trilha-costa-lagoa",
+          "nombre": "Trilha Costa da Lagoa",
+          "tipoActividad": "senderos",
+          "descripcion": "Sendero costero con vistas a la laguna. Pet-friendly, de dificultad moderada.",
+          "imagen": "../img/img-destinos/Florianópolis (Brasil)/Florianópolis (Brasil).jpg",
+          "grupoPersonas": "3-4",
+          "duracion": "4-6 horas",
+          "dificultad": "Moderada",
+          "requisitos": "Agua, protector solar, repelente",
+          "mejorEpoca": "Otoño y Primavera"
+        }
+      ]
+    }
+  }
+}

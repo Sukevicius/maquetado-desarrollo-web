@@ -18,35 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // =======================================================
   // 📦 JSON DE DESTINOS - RESTAURANTES PET FRIENDLY
   // =======================================================
-  const destinosData = {
-    bariloche: {
-      nombre: "Bariloche, Argentina",
-      imagen: '../img/bariloche.png',
-      restaurantes: [
-        {
-          id: 'maleza',
-          nombre: 'Maleza',
-          tipoCocina: 'local',
-          descripcion: 'Restaurante patagónico con terraza pet friendly y vistas al lago Nahuel Huapi.',
-          imagen: '../img/bariloche.png',
-          comensales: '1-2',
-          direccion: 'Av. Bustillo Km 7',
-          telefono: '+54 294 444-5566',
-          email: 'contacto@maleza.com',
-          web: 'https://maleza.com'
-        },
-        {
-          id: 'chiado',
-          nombre: 'Chiado',
-          tipoCocina: 'internacional',
-          descripcion: 'Cocina mediterránea en espacios amplios al aire libre donde tu mascota es bienvenida.',
-          imagen: '../img/bariloche.png',
-          comensales: '3-4',
-          direccion: 'Mitre 298',
-          telefono: '+54 294 442-3344',
-          email: 'info@chiado.com.ar',
-          web: 'https://chiado.com.ar'
-        },
+  let destinosData = {};
+
+  // Cargar datos desde el archivo JSON
+  fetch('gastronomia-data.json')
+    .then(response => response.json())
+    .then(data => {
+      destinosData = data.destinos;
+      console.log('✅ Datos de restaurantes cargados:', Object.keys(destinosData).length, 'destinos');
+      // Inicializar la interfaz después de cargar los datos
+      inicializarInterfaz();
+    })
+    .catch(error => {
+      console.error('❌ Error cargando datos de restaurantes:', error);
+    });
+
+  // Función para inicializar la interfaz
+  function inicializarInterfaz() {
+    // El resto del código se ejecuta aquí
         {
           id: 'puntopanoramico',
           nombre: 'Punto Panorámico',
@@ -58,102 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
           telefono: '+54 294 448-7788',
           email: 'reservas@puntopanoramico.com',
           web: ''
-        }
-      ]
-    },
-    sansebastian: {
-      nombre: "San Sebastián, España",
-      imagen: '../img/SanSebastian.png',
-      restaurantes: [
-        {
-          id: 'nestor',
-          nombre: 'Bar Nestor',
-          tipoCocina: 'local',
-          descripcion: 'Pintxos vascos tradicionales en terraza pet friendly, famoso por su tortilla.',
-          imagen: '../img/SanSebastian.png',
-          comensales: '1-2',
-          direccion: 'Calle Fermín Calbetón, 11',
-          telefono: '+34 943 42 58 67',
-          email: 'info@barnestor.com',
-          web: ''
-        },
-        {
-          id: 'lacuchara',
-          nombre: 'La Cuchara de San Telmo',
-          tipoCocina: 'local',
-          descripcion: 'Cocina vasca de autor que acepta perros pequeños en su salón.',
-          imagen: '../img/SanSebastian.png',
-          comensales: '3-4',
-          direccion: 'Calle 31 de Agosto, 28',
-          telefono: '+34 943 44 16 55',
-          email: 'reservas@lacuchara.es',
-          web: 'https://lacucharadesantelmo.com'
-        }
-      ]
-    },
-    portland: {
-      nombre: "Portland, Oregón (EE.UU.)",
-      imagen: '../img/portland-city.jpg',
-      restaurantes: [
-        {
-          id: 'luckylabrador',
-          nombre: 'Lucky Labrador Brewing',
-          tipoCocina: 'cafe',
-          descripcion: 'Cervecería artesanal con enorme patio dog friendly y menú para mascotas.',
-          imagen: '../img/portland-city.jpg',
-          comensales: '3-4',
-          direccion: '915 SE Hawthorne Blvd',
-          telefono: '+1 503-236-3555',
-          email: 'info@luckylab.com',
-          web: 'https://luckylab.com'
-        },
-        {
-          id: 'tinshed',
-          nombre: 'Tin Shed Garden Cafe',
-          tipoCocina: 'cafe',
-          descripcion: 'Brunch legendario con menú especial para perros (hamburguesas caninas).',
-          imagen: '../img/portland-city.jpg',
-          comensales: '1-2',
-          direccion: '1438 NE Alberta St',
-          telefono: '+1 503-288-6966',
-          email: 'hello@tinshedgardencafe.com',
-          web: 'https://tinshedgardencafe.com'
-        }
-      ]
-    },
-    garda: {
-      nombre: "Lago di Garda, Italia",
-      imagen: '../img/garda-italy.jpg',
-      restaurantes: [
-        {
-          id: 'gardenia',
-          nombre: 'Ristorante Gardenia',
-          tipoCocina: 'local',
-          descripcion: 'Cocina italiana tradicional en terraza con vistas al lago, pet friendly.',
-          imagen: '../img/garda-italy.jpg',
-          comensales: '3-4',
-          direccion: 'Via Gardesana, 45',
-          telefono: '+39 045 740 5566',
-          email: 'info@ristorantegardenia.it',
-          web: 'https://ristorantegardenia.it'
-        },
-        {
-          id: 'pescatore',
-          nombre: 'Trattoria Al Pescatore',
-          tipoCocina: 'local',
-          descripcion: 'Especialidad en pescados frescos del lago, acepta mascotas en exterior.',
-          imagen: '../img/garda-italy.jpg',
-          comensales: '5+',
-          direccion: 'Lungolago Zanardelli, 12',
-          telefono: '+39 045 627 0022',
-          email: 'reservas@alpescatore.it',
-          web: ''
-        }
-      ]
-    }
-  };
-
-  // =======================================================
+      }
+    ]
+    };  // =======================================================
   // 🔍 BUSCADOR INTEGRADO - Lógica principal
   // =======================================================
   
@@ -178,15 +74,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Nombres legibles
   const nombresDestinos = {
     bariloche: 'Bariloche',
-    sansebastian: 'San Sebastián',
-    portland: 'Portland',
-    garda: 'Lago di Garda'
+    sanmartin: 'San Martín de los Andes',
+    villaangostura: 'Villa La Angostura',
+    elbolson: 'El Bolsón',
+    sanrafael: 'San Rafael',
+    villageneralbelgrano: 'Villa General Belgrano',
+    tandil: 'Tandil',
+    mardelaspampas: 'Mar de las Pampas',
+    colonia: 'Colonia del Sacramento',
+    florianopolis: 'Florianópolis'
   };
   
   const nombresTipoCocina = {
     local: 'Cocina local',
     internacional: 'Internacional',
-    cafe: 'Cafés & Brunch',
+    italiana: 'Italiana',
+    cerveceria: 'Cervecería',
     todos: 'Todos'
   };
   
@@ -492,4 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
+  
+  } // Fin de inicializarInterfaz
+
+}); // Fin de DOMContentLoaded

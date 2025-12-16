@@ -16,38 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
   // =======================================================
   // 📦 JSON DE DESTINOS - ACTIVIDADES PET FRIENDLY
   // =======================================================
-  const destinosData = {
-    bariloche: {
-      nombre: "Bariloche, Argentina",
-      imagen: '../img/bariloche.png',
-      actividades: [
-        {
-          id: 'villa-coihues',
-          nombre: 'Villa Coihues',
-          tipoActividad: 'senderos',
-          descripcion: 'Caminata fácil de 5km con vistas espectaculares al lago Nahuel Huapi. Ideal para perros de todas las edades y tamaños.',
-          imagen: '../img/bariloche.png',
-          grupoPersonas: '1-2',
-          duracion: '2-3 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Correa obligatoria, bolsas para residuos',
-          mejorEpoca: 'Primavera y Verano'
-        },
-        {
-          id: 'cerro-catedral',
-          nombre: 'Cerro Catedral',
-          tipoActividad: 'senderos',
-          descripcion: 'Senderos de montaña con diferentes niveles de dificultad. Paisajes patagónicos únicos con tu mascota.',
-          imagen: '../img/bariloche.png',
-          grupoPersonas: '3-4',
-          duracion: '4-6 horas',
-          dificultad: 'Moderada',
-          requisitos: 'Buen estado físico del perro, agua abundante',
-          mejorEpoca: 'Todo el año'
-        },
-        {
-          id: 'playa-bonita',
-          nombre: 'Playa Bonita',
+  let destinosData = {};
+
+  // Cargar datos desde el archivo JSON
+  fetch('actividades-data.json')
+    .then(response => response.json())
+    .then(data => {
+      destinosData = data.destinos;
+      console.log('✅ Datos de actividades cargados:', Object.keys(destinosData).length, 'destinos');
+      // Inicializar la interfaz después de cargar los datos
+      inicializarInterfaz();
+    })
+    .catch(error => {
+      console.error('❌ Error cargando datos de actividades:', error);
+    });
+
+  // Función para inicializar la interfaz
+  function inicializarInterfaz() {
+    // El resto del código se ejecuta aquí
           tipoActividad: 'playas',
           descripcion: 'Playa tranquila en el lago Nahuel Huapi donde tu perro puede nadar libremente. Aguas cristalinas y arena suave.',
           imagen: '../img/bariloche.png',
@@ -70,165 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
           mejorEpoca: 'Verano'
         }
       ]
-    },
-    sansebastian: {
-      nombre: "San Sebastián, España",
-      imagen: '../img/SanSebastian.png',
-      actividades: [
-        {
-          id: 'playa-ondarreta',
-          nombre: 'Playa de Ondarreta',
-          tipoActividad: 'playas',
-          descripcion: 'Playa urbana que permite perros en temporada baja (octubre-mayo). Una de las playas más bellas de Europa.',
-          imagen: '../img/SanSebastian.png',
-          grupoPersonas: '1-2',
-          duracion: '2-4 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Correa obligatoria, horarios específicos',
-          mejorEpoca: 'Otoño e Invierno'
-        },
-        {
-          id: 'monte-urgull',
-          nombre: 'Monte Urgull',
-          tipoActividad: 'senderos',
-          descripcion: 'Sendero urbano con vistas panorámicas a la bahía de La Concha. Bosque y fortaleza histórica.',
-          imagen: '../img/SanSebastian.png',
-          grupoPersonas: '3-4',
-          duracion: '1-2 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Correa, agua para el perro',
-          mejorEpoca: 'Todo el año'
-        },
-        {
-          id: 'paseo-concha',
-          nombre: 'Paseo de La Concha',
-          tipoActividad: 'parques',
-          descripcion: 'Icónico paseo marítimo de 3km completamente pet friendly. Ideal para caminar al atardecer.',
-          imagen: '../img/SanSebastian.png',
-          grupoPersonas: 'grupo',
-          duracion: '1-2 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Ninguno especial',
-          mejorEpoca: 'Todo el año'
-        }
-      ]
-    },
-    portland: {
-      nombre: "Portland, Oregón (EE.UU.)",
-      imagen: '../img/portland-city.jpg',
-      actividades: [
-        {
-          id: 'forest-park',
-          nombre: 'Forest Park',
-          tipoActividad: 'parques',
-          descripcion: 'Uno de los parques urbanos más grandes de EE.UU. con más de 130km de senderos naturales.',
-          imagen: '../img/portland-city.jpg',
-          grupoPersonas: '3-4',
-          duracion: '2-6 horas',
-          dificultad: 'Moderada',
-          requisitos: 'Correa en zonas compartidas, agua',
-          mejorEpoca: 'Primavera y Otoño'
-        },
-        {
-          id: 'mt-tabor',
-          nombre: 'Mt. Tabor Park',
-          tipoActividad: 'parques',
-          descripcion: 'Parque único construido sobre un volcán extinto. Áreas sin correa designadas y vistas a la ciudad.',
-          imagen: '../img/portland-city.jpg',
-          grupoPersonas: '1-2',
-          duracion: '1-3 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Bolsas para residuos',
-          mejorEpoca: 'Todo el año'
-        },
-        {
-          id: 'sellwood-park',
-          nombre: 'Sellwood Riverfront Park',
-          tipoActividad: 'dog-parks',
-          descripcion: 'Dog park junto al río Willamette. Área sin correa con acceso al agua para que tu perro nade.',
-          imagen: '../img/portland-city.jpg',
-          grupoPersonas: 'grupo',
-          duracion: '1-2 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Vacunas al día, comportamiento social',
-          mejorEpoca: 'Verano'
-        },
-        {
-          id: 'chimney-park',
-          nombre: 'Chimney Park',
-          tipoActividad: 'dog-parks',
-          descripcion: 'Dog park cercado de 2 acres. Área separada para perros pequeños y grandes.',
-          imagen: '../img/portland-city.jpg',
-          grupoPersonas: '1-2',
-          duracion: '1 hora',
-          dificultad: 'Fácil',
-          requisitos: 'Vacunas, licencia de perro',
-          mejorEpoca: 'Todo el año'
-        }
-      ]
-    },
-    garda: {
-      nombre: "Lago di Garda, Italia",
-      imagen: '../img/garda-italy.jpg',
-      actividades: [
-        {
-          id: 'bau-beach',
-          nombre: 'Bau Beach (Peschiera)',
-          tipoActividad: 'playas',
-          descripcion: 'Primera playa exclusiva para perros en Italia. Arena limpia, duchas y zona de juegos acuáticos.',
-          imagen: '../img/garda-italy.jpg',
-          grupoPersonas: '1-2',
-          duracion: '3-5 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Entrada con costo, vacunas requeridas',
-          mejorEpoca: 'Verano'
-        },
-        {
-          id: 'sirmione',
-          nombre: 'Sirmione',
-          tipoActividad: 'parques',
-          descripcion: 'Pueblo medieval completamente pet friendly. Calles históricas, castillo y aguas termales.',
-          imagen: '../img/garda-italy.jpg',
-          grupoPersonas: '3-4',
-          duracion: '4-6 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Correa en zonas históricas',
-          mejorEpoca: 'Primavera y Otoño'
-        },
-        {
-          id: 'malcesine',
-          nombre: 'Malcesine',
-          tipoActividad: 'parques',
-          descripcion: 'Pueblo pintoresco con calles empedradas y vistas al castillo Scaligero. Paseo por el lungolago.',
-          imagen: '../img/garda-italy.jpg',
-          grupoPersonas: '1-2',
-          duracion: '2-4 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Bozal recomendado en transporte público',
-          mejorEpoca: 'Todo el año'
-        },
-        {
-          id: 'limone',
-          nombre: 'Limone sul Garda',
-          tipoActividad: 'parques',
-          descripcion: 'Famoso por sus limoneros. Paseo panorámico junto al lago con terrazas pet friendly.',
-          imagen: '../img/garda-italy.jpg',
-          grupoPersonas: 'grupo',
-          duracion: '3-5 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Agua, protección solar para el perro',
-          mejorEpoca: 'Primavera'
-        }
-      ]
     }
   };
 
   // Mapeo de nombres para display
   const nombresDestinos = {
     bariloche: 'Bariloche',
-    sansebastian: 'San Sebastián',
-    portland: 'Portland',
-    garda: 'Lago di Garda'
+    sanmartin: 'San Martín de los Andes',
+    villaangostura: 'Villa La Angostura',
+    elbolson: 'El Bolsón',
+    sanrafael: 'San Rafael',
+    villageneralbelgrano: 'Villa General Belgrano',
+    tandil: 'Tandil',
+    mardelaspampas: 'Mar de las Pampas',
+    colonia: 'Colonia del Sacramento',
+    florianopolis: 'Florianópolis'
   };
 
   const nombresTipoActividad = {
@@ -533,4 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
+  
+  } // Fin de inicializarInterfaz
+
+}); // Fin de DOMContentLoaded
