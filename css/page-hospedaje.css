@@ -461,23 +461,41 @@
   }
 
   .buscador-section,
-  .mejor-epoca-section {
+  .mejor-epoca-section,
+  .sectionContenedor {
     border-radius: 0;
   }
 
   .buscador-section h2,
   .mejor-epoca-section h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .sectionContenedor h2,
+  .seclugares header h2 {
+    font-size: 1.1rem;
+  }
+
+  .seclugares header {
+    padding-left: 16px;
   }
 
   .buscador-section p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .cardText button {
     font-size: 0.75rem;
     padding: 6px;
     border: none;
+  }
+
+  .cardText h3 {
+    font-size: 0.9rem;
+  }
+
+  .cardText p {
+    font-size: 0.85rem;
   }
 }
 

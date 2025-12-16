@@ -60,40 +60,89 @@
 
 
   <main class="hospedaje-page">
-    <!-- Buscador -->
-    <section class="buscador-section">
-      <h2>¿Buscás dónde comer con tu mascota?</h2>
-      <p>Descubrí restaurantes y cafés <em>pet friendly</em> con las mejores opciones gastronómicas.</p>
-      <form class="buscador-form" id="buscadorForm">
-        <div class="buscador-input">
-          <label for="destino">Destino</label>
-          <select id="destino" required>
-            <option value="">Seleccióná un destino...</option>
-            <option value="bariloche">Bariloche, Argentina</option>
-            <option value="sansebastian">San Sebastián, España</option>
-            <option value="portland">Portland, Oregón (EE.UU.)</option>
-            <option value="garda">Lago di Garda, Italia</option>
-          </select>
+    <!-- Buscador Integrado -->
+    <section class="buscador-integrado" id="buscadorIntegrado">
+      <div class="buscador-header">
+        <h2>¿Buscás el restaurante ideal para vos y tu mascota?</h2>
+        <p>Seleccioná las opciones y explorá los resultados en tiempo real</p>
+      </div>
+      
+      <!-- Layout de dos columnas -->
+      <div class="buscador-layout">
+        <!-- Columna izquierda: Selectores -->
+        <div class="buscador-columna-izquierda">
+          <div class="selector-tabs-container">
+            <!-- Destino -->
+            <div class="selector-row">
+              <label class="selector-label">
+                <span class="material-symbols-outlined">location_on</span>
+                Destino:
+              </label>
+              <select class="selector-select" id="destino">
+                <option value="">-- Elegí un destino --</option>
+                <option value="bariloche">Bariloche, Argentina</option>
+                <option value="sansebastian">San Sebastián, España</option>
+                <option value="portland">Portland, Oregón (EE.UU.)</option>
+                <option value="garda">Lago di Garda, Italia</option>
+              </select>
+            </div>
+
+            <!-- Tipo de cocina -->
+            <div class="selector-row">
+              <label class="selector-label">
+                <span class="material-symbols-outlined">restaurant</span>
+                Tipo de cocina:
+              </label>
+              <div class="selector-buttons">
+                <button type="button" class="selector-btn" data-tipo="local">Cocina local</button>
+                <button type="button" class="selector-btn" data-tipo="internacional">Internacional</button>
+                <button type="button" class="selector-btn" data-tipo="cafe">Cafés & Brunch</button>
+                <button type="button" class="selector-btn" data-tipo="todos">Todos</button>
+              </div>
+            </div>
+
+            <!-- Comensales -->
+            <div class="selector-row">
+              <label class="selector-label">
+                <span class="material-symbols-outlined">group</span>
+                Comensales:
+              </label>
+              <select class="selector-select" id="personas">
+                <option value="1-2">1-2 personas</option>
+                <option value="3-4">3-4 personas</option>
+                <option value="5+">5+ personas</option>
+              </select>
+            </div>
+
+            <!-- Restaurante -->
+            <div class="selector-row">
+              <label class="selector-label">
+                <span class="material-symbols-outlined">dinner_dining</span>
+                Restaurante:
+              </label>
+              <select class="selector-select" id="restaurante" disabled>
+                <option value="">Primero elegí un destino...</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Botón de búsqueda -->
+          <button type="button" class="btn-buscar" id="btnBuscar" disabled>
+            <span class="material-symbols-outlined">search</span>
+            Buscar Restaurante
+          </button>
         </div>
-        <div class="buscador-input">
-          <label for="tipo-cocina">Tipo de cocina</label>
-          <select id="tipo-cocina">
-            <option value="">Todas las cocinas</option>
-            <option value="local">Cocina local</option>
-            <option value="internacional">Internacional</option>
-            <option value="cafe">Cafés y brunch</option>
-          </select>
+
+        <!-- Columna derecha: Resultados -->
+        <div class="buscador-columna-derecha">
+          <div class="resultado-container" id="resultadoContainer">
+            <div class="resultado-placeholder">
+              <div class="placeholder-icon">🍽️</div>
+              <p>Seleccioná un destino para ver los restaurantes disponibles</p>
+            </div>
+          </div>
         </div>
-        <div class="buscador-input">
-          <label for="personas">Comensales</label>
-          <select id="personas">
-            <option>1-2 personas</option>
-            <option>3-4 personas</option>
-            <option>5+ personas</option>
-          </select>
-        </div>
-        <button type="submit">Buscar</button>
-      </form>
+      </div>
     </section>
 
     <!-- Restaurantes Pet Friendly por destino -->
