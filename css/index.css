@@ -254,8 +254,8 @@ h2 {
 .slider-wrapper {
     position: relative;
     width: 100%;
-    /* overflow: hidden; */
-    padding: 1rem;
+    overflow: visible;
+    padding: 2rem 1rem;
 }
 
 .slider-container {
@@ -264,7 +264,7 @@ h2 {
     scroll-behavior: smooth;
     gap: 16px;
     scroll-snap-type: x mandatory;
-    padding: 0 1rem;
+    padding: 1rem;
     white-space: nowrap;
 }
 
@@ -326,16 +326,27 @@ h2 {
     }
 
     .arrow {
-        display: none;
+        display: flex;
+        width: 32px;
+        height: 32px;
+        font-size: 1.5rem;
+        padding: 4px;
     }
 
     .slider-container {
         overflow-x: scroll;
         scroll-padding: 0 1rem;
+        gap: 16px;
+        padding: 0 1rem;
+        -webkit-overflow-scrolling: touch;
     }
 
     .slider-container .card {
-        scroll-snap-align: center;
+        scroll-snap-align: start;
+        width: 75vw;
+        min-width: 260px;
+        max-width: 320px;
+        flex-shrink: 0;
     }
 }
 
