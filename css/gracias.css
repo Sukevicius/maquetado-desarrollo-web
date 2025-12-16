@@ -51,6 +51,9 @@ main.gracias-page {
 
 .gracias-icon {
     margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gracias-icon img {
