@@ -11,7 +11,7 @@ main.gracias-page {
     align-items: center;
     justify-content: center;
     padding: 120px 20px 40px;
-    background: linear-gradient(135deg, var(--pantone-tofu) 0%, var(--pantone-muskmelon) 100%);
+    background: var(--pantone-tofu) ;
     margin: 0;
     flex-direction: column;
     gap: 0;
@@ -59,7 +59,6 @@ main.gracias-page {
 .gracias-icon img {
     width: 120px;
     height: auto;
-    animation: bounce 2s ease-in-out infinite;
 }
 
 @keyframes bounce {
@@ -130,7 +129,9 @@ main.gracias-page {
 
 .gracias-cita p {
     margin: 0 0 8px 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: var(--color-white);
+
 }
 
 .gracias-cita footer {
@@ -190,8 +191,19 @@ main.gracias-page {
 
 /* Responsive */
 @media (max-width: 768px) {
+    main.gracias-page {
+        padding: 100px 16px 20px;
+    }
+
+    .gracias-container {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+
     .gracias-content {
-        padding: 32px 24px;
+        padding: 32px 20px;
+        border-radius: 12px;
     }
     
     .gracias-content h2 {
