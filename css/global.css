@@ -138,8 +138,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-top: 0;
-  margin-bottom: var(--spacing-m);
+  /* margin-bottom: var(--spacing-m); */
   color: var(--pantone-blue-iolite);
+  padding: 1rem 0;
 }
 
 h1 {
@@ -531,14 +532,31 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  justify-content: space-evenly;
+  align-items: flex-start;
   padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footer-column {
-  flex: 1 1 250px;
+  flex: 0 1 auto;
   min-width: 200px;
   padding: 0 16px;
+}
+
+.footer-column:nth-child(1) {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-column:nth-child(2) {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.footer-column:nth-child(3) {
+  flex: 1;
+  text-align: right;
 }
 
 .footer-column h3,
