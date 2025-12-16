@@ -255,7 +255,7 @@ h2 {
     position: relative;
     width: 100%;
     overflow: visible;
-    padding: 2rem 1rem;
+    /* padding: 2rem 1rem; */
 }
 
 .slider-container {
@@ -763,9 +763,13 @@ h2 {
 
 .secinfo header {
     background-color: var(--pantone-mandarin-orange);
-    padding: 16px 24px;
+    /* padding: 16px 24px; */
     border-radius: 12px 12px 0 0;
     margin: -32px -32px 24px -32px;
+}
+.secinfo header h2 {
+    display: flex;
+    padding: 16px 24px;
 }
 
 .secinfo blockquote {
@@ -862,4 +866,44 @@ h2 {
 
 .datos-alumno dt:first-of-type {
     margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .secinfo {
+        padding: 16px;
+    }
+
+    .secinfo header {
+        margin: -16px -16px 16px -16px;
+    }
+
+    .secinfo header h2 {
+        font-size: 1.2rem;
+        padding: 12px 16px;
+    }
+
+    .secinfo blockquote {
+        padding: 16px;
+    }
+
+    .secinfo blockquote p {
+        font-size: 1rem;
+    }
+
+    .secdatos {
+        padding: 16px;
+    }
+
+    .secdatos header {
+        margin: -16px -16px 16px -16px;
+        padding: 12px 16px;
+    }
+
+    .secdatos h2 {
+        font-size: 1.2rem;
+    }
+
+    .datos-alumno {
+        padding: 16px 20px;
+    }
 }
