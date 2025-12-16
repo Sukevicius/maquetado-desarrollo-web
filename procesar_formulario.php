@@ -5,6 +5,11 @@
  * Valida, guarda y redirige a página de confirmación
  */
 
+// Iniciar sesión
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Permitir solo POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: contacto.html');
@@ -335,6 +340,9 @@ function guardar_registro_texto($datos) {
 $_SESSION['consulta_exitosa'] = true;
 $_SESSION['nombre_usuario'] = $nombre;
 $_SESSION['email_usuario'] = $email;
+
+// Asegurar que no hay output antes del redirect
+if (ob_get_level()) ob_end_clean();
 
 header('Location: gracias.html?id=' . $datos_formulario['id']);
 exit;
