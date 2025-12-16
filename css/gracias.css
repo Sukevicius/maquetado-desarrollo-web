@@ -192,7 +192,8 @@ main.gracias-page {
 /* Responsive */
 @media (max-width: 768px) {
     main.gracias-page {
-        padding: 100px 16px 20px;
+        padding: 50px 0 0 0;
+        border-radius: 0;
     }
 
     .gracias-container {
@@ -202,8 +203,8 @@ main.gracias-page {
     }
 
     .gracias-content {
-        padding: 32px 20px;
-        border-radius: 12px;
+        padding: 50px 16px;
+        border-radius: 0px;
     }
     
     .gracias-content h2 {

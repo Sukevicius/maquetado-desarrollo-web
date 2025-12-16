@@ -326,6 +326,10 @@ h2 {
         padding: 6px;
         border: none;
     }
+
+    .arrow {
+        display: none;
+    }
 }
 
 /* =====================
