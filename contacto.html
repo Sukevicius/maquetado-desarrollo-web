@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <!-- Material Symbols Outlined -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <title>Contacto - Furry Travels</title>
+</head>
+
+<body>
+    <!-- Menú Sticky -->
+    <div class="header-sticky-bar sticky-layout" id="menuSticky">
+        <div class="logo">
+            <a href="index.html" class="logoImg" aria-label="Ir al inicio" title="Ir al inicio">
+                <img src="img/logofinal.png" alt="Logo de Furry Travels">
+            </a>
+            <span class="logo-text">Furry Travels</span>
+        </div>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">☰</button>
+
+        <nav class="menu" id="navMenu">
+            <ul>
+                <li><a href="index.html#lugares" class="button"><strong>LUGARES</strong></a></li>
+                <li><a href="index.html#servicios" class="button"><strong>SERVICIOS</strong></a></li>
+                <li><a href="contacto.html" class="button active"><strong>CONTACTO</strong></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Banner de página -->
+    <section class="page-banner" style="background-image: url('img/perroauto.png');">
+        <div class="banner-overlay">
+            <h1>CONTACTO</h1>
+            <p>Estamos aquí para ayudarte a planificar el viaje perfecto con tu mascota</p>
+        </div>
+    </section>
+
+    <main class="contacto-page">
+        
+        <!-- Layout de 2 columnas: Datos + Formulario -->
+        <section class="contacto-main-section">
+            <div class="contacto-two-columns">
+                
+                <!-- Columna Izquierda: Datos de Contacto y Alumna -->
+                <aside class="columna-datos">
+                    <div class="datos-card">
+                        <div class="datos-header">
+                            <img src="img/logo-furry-png.png" alt="Logo Furry Travels" class="datos-logo">
+                            <h2>Furry Travels</h2>
+                        </div>
+                        
+                        <div class="info-items">
+                            <div class="info-item">
+                                <span class="info-icon"><span class="material-symbols-outlined">email</span></span>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p><a href="mailto:info@furrytravels.com">info@furrytravels.com</a></p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon"><span class="material-symbols-outlined">phone</span></span>
+                                <div>
+                                    <strong>Teléfono</strong>
+                                    <p><a href="tel:+541112345678">+54 11 1234-5678</a></p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon"><span class="material-symbols-outlined">location_on</span></span>
+                                <div>
+                                    <strong>Ubicación</strong>
+                                    <p>Buenos Aires, Argentina</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon"><span class="material-symbols-outlined">schedule</span></span>
+                                <div>
+                                    <strong>Horario</strong>
+                                    <p>Lunes a Viernes: 9:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="datos-divider">
+
+                        <div class="alumna-info">
+                            <h3>Datos del Alumno</h3>
+                            <dl class="datos-alumno-compact">
+                                <dt>Alumna</dt>
+                                <dd>Sukevicius Samanta</dd>
+                                
+                                <dt><abbr title="Documento Nacional de Identidad">DNI</abbr></dt>
+                                <dd>32.584.131</dd>
+                                
+                                <dt>Materia</dt>
+                                <dd>Maquetado y Desarrollo Web</dd>
+                                
+                                <dt>Comisión</dt>
+                                <dd>DWN1AP</dd>
+                                
+                                <dt>Profesor</dt>
+                                <dd>Carlos Ferrer</dd>
+                                
+                                <dt>Institución</dt>
+                                <dd>Escuela Da Vinci - 2025</dd>
+                            </dl>
+                        </div>
+
+                        <div class="social-section">
+                            <h4>Síguenos</h4>
+                            <div class="social-icons-compact">
+                                <a href="#" aria-label="Twitter"><img src="img/twiter.svg" alt="Twitter"></a>
+                                <a href="#" aria-label="Instagram"><img src="img/instagram.svg" alt="Instagram"></a>
+                                <a href="#" aria-label="Facebook"><img src="img/face.svg" alt="Facebook"></a>
+                                <a href="#" aria-label="YouTube"><img src="img/youtube.svg" alt="YouTube"></a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Columna Derecha: Formulario -->
+                <div class="columna-formulario">
+                    <div class="form-container">
+                        <div class="form-header">
+                            <h2>Envianos tu consulta</h2>
+                            <p>Completá el formulario y nos pondremos en contacto a la brevedad</p>
+                        </div>
+
+                        <form action="procesar_formulario.php" method="post" class="formulario-contacto" enctype="multipart/form-data">
+                            
+                            <fieldset>
+                                <legend>Datos Personales</legend>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre:</label>
+                                        <input type="text" id="nombre" name="nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apellido">Apellido:</label>
+                                        <input type="text" id="apellido" name="apellido" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="usuario">Nombre de usuario:</label>
+                                        <input type="text" id="usuario" name="usuario" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Correo electrónico:</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="clave">Contraseña:</label>
+                                        <input type="password" id="clave" name="clave" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Sexo:</label>
+                                        <div class="radio-group">
+                                            <label><input type="radio" name="sexo" value="femenino" required> Femenino</label>
+                                            <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
+                                            <label><input type="radio" name="sexo" value="otro"> Otro</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>Sobre tu mascota</legend>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="foto-mascota">Subí una foto de tu mascota:</label>
+                                        <input type="file" id="foto-mascota" name="foto-mascota" accept="image/*">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tipo-mascota">Tipo de mascota:</label>
+                                        <select id="tipo-mascota" name="tipo-mascota" required>
+                                            <option value="">Seleccionar...</option>
+                                            <option value="perro">Perro</option>
+                                            <option value="gato">Gato</option>
+                                            <option value="ave">Ave</option>
+                                            <option value="otro">Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>Servicios de interés</legend>
+                                
+                                <label>Seleccioná los servicios que te interesan:</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="intereses[]" value="hospedaje"> Hospedaje Pet Friendly</label>
+                                    <label><input type="checkbox" name="intereses[]" value="excursiones"> Excursiones con mascotas</label>
+                                    <label><input type="checkbox" name="intereses[]" value="transporte"> Transporte especializado</label>
+                                    <label><input type="checkbox" name="intereses[]" value="veterinaria"> Servicios veterinarios</label>
+                                    <label><input type="checkbox" name="intereses[]" value="guarderia"> Guardería de mascotas</label>
+                                    <label><input type="checkbox" name="intereses[]" value="entrenamiento"> Entrenamiento canino</label>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-group full-width">
+                                <label for="mensaje">Consulta o mensaje:</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu consulta aquí..."></textarea>
+                            </div>
+
+                            <label class="checkbox-acepta">
+                                <input type="checkbox" name="acepta" required>
+                                Acepto los <a href="#" target="_blank">términos y condiciones</a>
+                            </label>
+
+                            <button type="submit" class="btn-enviar">Enviar consulta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa de ubicación -->
+        <section class="mapa-section">
+            <h2>Nuestra ubicación - Escuela Da Vinci</h2>
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6568.033654373858!2d-58.386324!3d-34.603736!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaea670d4e67%3A0x2198c954311ad6d9!2sDa%20Vinci%20%7C%20Primera%20Escuela%20de%20Arte%20Multimedial!5e0!3m2!1ses-419!2sar!4v1765477628501!5m2!1ses-419!2sar" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa de ubicación de Da Vinci - Primera Escuela de Arte Multimedial">
+                </iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footerTP">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-title">¿QUIENES SOMOS?</div>
+                <ul>
+                    <li><strong>Alumna:</strong> Sukevicius Samanta - <strong><abbr title="Documento Nacional de Identidad">DNI</abbr>:</strong> 32.584.131</li>
+                    <li><strong>Materia:</strong> Maquetado y Desarrollo Web</li>
+                    <li><strong>Comisión:</strong> DWN1AP</li>
+                    <li><strong>Profesor:</strong> Carlos Ferrer</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <div class="footer-title">SÍGUENOS EN REDES</div>
+                <div class="social-icons">
+                    <a href="#"><img src="img/twiter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="img/face.svg" alt="Facebook"></a>
+                    <a href="#"><img src="img/youtube.svg" alt="YouTube"></a>
+                    <a href="#"><img src="img/linkedin.svg" alt="LinkedIn"></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <div class="footer-title">¿QUÉ HACEMOS?</div>
+                <ul>
+                    <li>Entrega correspondiente al 1° cuatrimestre</li>
+                    <li><strong>Institución:</strong> Escuela Da Vinci - Año 2025</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p><a href="#">Aviso legal</a> | <a href="#">Privacidad y Cookies</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburguesa para mobile
+        const hamburger = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>

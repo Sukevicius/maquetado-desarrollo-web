@@ -1,0 +1,31 @@
+# Ignora carpetas de datos y uploads
+data/
+uploads/
+
+# Ignora archivos del sistema operativo
+.DS_Store
+Thumbs.db
+*.log
+
+# Ignora archivos de editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignora archivos temporales
+*.tmp
+*.bak
+*.backup
+
+# Ignora node_modules (si lo usas)
+node_modules/
+
+# Ignora composer (si lo usas)
+vendor/
+composer.lock
+
+# Ignora variables de entorno
+.env
+.env.local
