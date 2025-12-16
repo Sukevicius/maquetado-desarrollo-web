@@ -456,6 +456,10 @@
 }
 
 @media (max-width: 768px) {
+  .hospedaje-page {
+    padding: 0;
+  }
+
   .cardText button {
     font-size: 0.75rem;
     padding: 6px;

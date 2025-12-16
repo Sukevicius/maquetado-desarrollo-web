@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Bariloche - Furry Travels</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/page-cards.css">
+</head>
+
+<body>
+    <!-- Menú Sticky Siempre Visible -->
+    <div class="header-sticky-bar sticky-layout" id="menuSticky">
+        <div class="logo">
+            <a href="../index.html" class="logoImg">
+                <img src="../img/logofinal.png" alt="Logo de TP1" >
+            </a>
+            <span class="logo-text">Furry Travels</span>
+        </div>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">☰</button>
+
+        <nav class="menu" id="navMenu">
+            <ul>
+                <li><a href="../index.html#lugares" class="button"><strong>LUGARES</strong></a></li>
+                <li><a href="../pages-hospedaje/hospedaje.html" class="button"><strong>HOSPEDAJE</strong></a></li>
+                <li><a href="../contacto.html" class="button"><strong>CONTACTO</strong></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <section class="intro-slider">
+            <div class="slider-container">
+                <div class="slider-track">
+                    <img src="../img/puerto-blest-y-cascada.jpg" alt="Imagen 1" />
+                    <img src="../img/SanSebastian.png" alt="Imagen 2" />
+                    <img src="../img/portland-city.jpg" alt="Imagen 3" />
+                </div>
+                <button class="slider-btn prev">‹</button>
+                <button class="slider-btn next">›</button>
+            </div>
+
+            <div class="intro-content">
+                <h1>Bariloche Pet Friendly</h1>
+                <hr />
+                <p>
+                    Bariloche es un destino relativamente amigable con las mascotas, especialmente perros. Hay opciones
+                    de alojamiento, restaurantes y actividades que permiten la compañía de animales.
+                </p>
+                <!-- Acordeones -->
+                <section class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Alojamiento <span class="accordion-icon">▼</span></button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Selina Bariloche</li>
+                                <li>Hotel Hampton by Hilton Bariloche</li>
+                                <li>Pailahue Lodge y Cabañas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Gastronomía <span class="accordion-icon">▼</span></button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Maleza</li>
+                                <li>Chiado</li>
+                                <li>Punto Panorámico</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Actividades <span class="accordion-icon">▼</span></button>
+                        <div class="accordion-content">
+                            <p>Senderos y naturaleza: Villa Coihues, Cerro Catedral.</p>
+                            <p><strong>Playas:</strong> Playa Bonita, Bahía Serena, Playa Del Viento.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Consejos <span class="accordion-icon">▼</span></button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Lleva agua y comida.</li>
+                                <li>Vacunas y documentación al día.</li>
+                                <li>Respeta normas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+    <footer class="footerTP">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-title">¿QUIENES SOMOS?</div>
+                <ul>
+                    <li><strong>Alumna:</strong> Sukevicius Samanta - <strong>DNI:</strong> 32.584.131</li>
+                    <li><strong>Materia:</strong> Maquetado y Desarrollo Web </li>
+                    <li><strong>Comisión:</strong> DWN1AP</li>
+                    <li><strong>Profesor:</strong> Carlos Ferrer</li>
+
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <div class="footer-title">SÍGUENOS EN REDES</div>
+                <div class="social-icons">
+                    <a href="#"><img src="../img/twiter.svg" alt="Twitter"></a>
+                    <a href="#"><img src="../img/instagram.svg" alt="Instagram"></a>
+                    <a href="#"><img src="../img/face.svg" alt="face"></a>
+                    <a href="#"><img src="../img/youtube.svg" alt="youtube"></a>
+                    <a href="#"><img src="../img/linkedin.svg" alt="LinkedIn"></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <div class="footer-title">¿QUÉ HACEMOS?</div>
+                <ul>
+                    <li>Entrega correspondiente al 1° cuatrimestre </li>
+                    <li><strong>Institucion:</strong> Escuela Da Vinci - Año 2025</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p><a href="#">Aviso legal</a> | <a href="#">Privacidad y Cookies</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburguesa para mobile
+        const hamburger = document.getElementById('hamburgerBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        const headers = document.querySelectorAll('.accordion-header');
+
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.accordion-icon');
+                const isVisible = content.style.display === 'block';
+
+                // Opcional: cerrar todos antes de abrir otro
+                document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+                document.querySelectorAll('.accordion-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+
+                if (!isVisible) {
+                    content.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+        // Slider básico
+        const track = document.querySelector('.slider-track');
+        const prevBtn = document.querySelector('.slider-btn.prev');
+        const nextBtn = document.querySelector('.slider-btn.next');
+        let index = 0;
+
+        nextBtn.addEventListener('click', () => {
+            index = (index + 1) % track.children.length;
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            index = (index - 1 + track.children.length) % track.children.length;
+            updateSlider();
+        });
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+    </script>
+</body>
+
+</html>
