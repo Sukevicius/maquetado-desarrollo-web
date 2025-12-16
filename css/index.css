@@ -305,11 +305,11 @@ h2 {
 
 
 .arrow.left {
-    left: -15px;
+    left: 0;
 }
 
 .arrow.right {
-    right: -15px;
+    right: 0;
 }
 
 @media (max-width: 1024px) {
