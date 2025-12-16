@@ -461,13 +461,11 @@
   }
 
   .buscador-section,
-  .mejor-epoca-section,
   .sectionContenedor {
     border-radius: 0;
   }
 
-  .buscador-section h2,
-  .mejor-epoca-section h2 {
+  .buscador-section h2 {
     font-size: 1.1rem;
   }
 
@@ -497,69 +495,6 @@
   .cardText p {
     font-size: 0.85rem;
   }
-}
-
-
-/* Mejor época */
-.mejor-epoca-section {
-  width: 100%;
-  background: var(--pantone-aquarelle);
-  padding: 24px;
-  border-radius: var(--border-radius-l);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-} 
-
-.mejor-epoca-section h2 {
-  color: var(--pantone-tofu);
-  margin-bottom: 16px;
-}
-
-.tabs-epoca {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.tabs-epoca .tab {
-  padding: 8px 12px;
-  background: var(--pantone-tofu);
-  border: 1px solid var(--pantone-muskmelon);
-  border-radius: var(--border-radius-s);
-  cursor: pointer;
-  color: var(--pantone-blue-iolite);
-}
-
-.tabs-epoca .tab.active {
-  background: var(--pantone-habanero-gold);
-  color: #fff;
-}
-
-.epoca-contenido {
-  display: flex;
-  gap: 16px;
-  background: #fff;
-  border-radius: var(--border-radius-l);
-  padding: 16px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-}
-
-.epoca-contenido img {
-  width: 200px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: var(--border-radius-m);
-}
-
-.epoca-contenido ul {
-  list-style: none;
-  padding: 0;
-}
-
-.epoca-contenido ul li {
-  margin-bottom: 8px;
-  color: #333;
 }
 
 /* =====================

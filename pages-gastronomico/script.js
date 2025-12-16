@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navMenu = document.getElementById('navMenu');
 
-  hamburgerBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-  });
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+  }
 
   // =======================================================
   // 📦 JSON DE DESTINOS - RESTAURANTES PET FRIENDLY
@@ -20,123 +22,312 @@ document.addEventListener('DOMContentLoaded', () => {
     bariloche: {
       nombre: "Bariloche, Argentina",
       imagen: '../img/bariloche.png',
-      alt: 'Bariloche',
-      descripcion: 'Gastronomía patagónica con vistas a lagos y montañas.',
       restaurantes: [
-        { nombre: 'Maleza', tipo: 'Cocina patagónica', descripcion: 'Terraza pet friendly con vistas.' },
-        { nombre: 'Chiado', tipo: 'Restaurante', descripcion: 'Espacios al aire libre para mascotas.' },
-        { nombre: 'Punto Panorámico', tipo: 'Mirador', descripcion: 'Vistas al lago, acepta mascotas en exterior.' }
+        {
+          id: 'maleza',
+          nombre: 'Maleza',
+          tipoCocina: 'local',
+          descripcion: 'Restaurante patagónico con terraza pet friendly y vistas al lago Nahuel Huapi.',
+          imagen: '../img/bariloche.png',
+          comensales: '1-2',
+          direccion: 'Av. Bustillo Km 7',
+          telefono: '+54 294 444-5566',
+          email: 'contacto@maleza.com',
+          web: 'https://maleza.com'
+        },
+        {
+          id: 'chiado',
+          nombre: 'Chiado',
+          tipoCocina: 'internacional',
+          descripcion: 'Cocina mediterránea en espacios amplios al aire libre donde tu mascota es bienvenida.',
+          imagen: '../img/bariloche.png',
+          comensales: '3-4',
+          direccion: 'Mitre 298',
+          telefono: '+54 294 442-3344',
+          email: 'info@chiado.com.ar',
+          web: 'https://chiado.com.ar'
+        },
+        {
+          id: 'puntopanoramico',
+          nombre: 'Punto Panorámico',
+          tipoCocina: 'cafe',
+          descripcion: 'Cafetería con vistas espectaculares, ideal para brunch con tu perro.',
+          imagen: '../img/bariloche.png',
+          comensales: '1-2',
+          direccion: 'Circuito Chico Km 18',
+          telefono: '+54 294 448-7788',
+          email: 'reservas@puntopanoramico.com',
+          web: ''
+        }
       ]
     },
     sansebastian: {
       nombre: "San Sebastián, España",
       imagen: '../img/SanSebastian.png',
-      alt: 'San Sebastián',
-      descripcion: 'Capital gastronómica vasca con los mejores pintxos.',
       restaurantes: [
-        { nombre: 'Bar Nestor', tipo: 'Pintxos', descripcion: 'Terraza pet friendly, famoso por su tortilla.' },
-        { nombre: 'La Cuchara de San Telmo', tipo: 'Cocina vasca', descripcion: 'Acepta perros pequeños.' },
-        { nombre: 'Gandarias', tipo: 'Clásico vasco', descripcion: 'Mesas al exterior para mascotas.' }
+        {
+          id: 'nestor',
+          nombre: 'Bar Nestor',
+          tipoCocina: 'local',
+          descripcion: 'Pintxos vascos tradicionales en terraza pet friendly, famoso por su tortilla.',
+          imagen: '../img/SanSebastian.png',
+          comensales: '1-2',
+          direccion: 'Calle Fermín Calbetón, 11',
+          telefono: '+34 943 42 58 67',
+          email: 'info@barnestor.com',
+          web: ''
+        },
+        {
+          id: 'lacuchara',
+          nombre: 'La Cuchara de San Telmo',
+          tipoCocina: 'local',
+          descripcion: 'Cocina vasca de autor que acepta perros pequeños en su salón.',
+          imagen: '../img/SanSebastian.png',
+          comensales: '3-4',
+          direccion: 'Calle 31 de Agosto, 28',
+          telefono: '+34 943 44 16 55',
+          email: 'reservas@lacuchara.es',
+          web: 'https://lacucharadesantelmo.com'
+        }
       ]
     },
     portland: {
       nombre: "Portland, Oregón (EE.UU.)",
       imagen: '../img/portland-city.jpg',
-      alt: 'Portland',
-      descripcion: 'Escena gastronómica alternativa y cervecerías artesanales.',
       restaurantes: [
-        { nombre: 'Lucky Labrador Brewing', tipo: 'Cervecería', descripcion: 'Patio dog friendly, cerveza artesanal.' },
-        { nombre: 'Tin Shed Garden Cafe', tipo: 'Brunch', descripcion: 'Famoso brunch con menú para perros.' },
-        { nombre: 'Hawthorne Hophouse', tipo: 'Bar', descripcion: 'Amplio espacio para mascotas.' }
+        {
+          id: 'luckylabrador',
+          nombre: 'Lucky Labrador Brewing',
+          tipoCocina: 'cafe',
+          descripcion: 'Cervecería artesanal con enorme patio dog friendly y menú para mascotas.',
+          imagen: '../img/portland-city.jpg',
+          comensales: '3-4',
+          direccion: '915 SE Hawthorne Blvd',
+          telefono: '+1 503-236-3555',
+          email: 'info@luckylab.com',
+          web: 'https://luckylab.com'
+        },
+        {
+          id: 'tinshed',
+          nombre: 'Tin Shed Garden Cafe',
+          tipoCocina: 'cafe',
+          descripcion: 'Brunch legendario con menú especial para perros (hamburguesas caninas).',
+          imagen: '../img/portland-city.jpg',
+          comensales: '1-2',
+          direccion: '1438 NE Alberta St',
+          telefono: '+1 503-288-6966',
+          email: 'hello@tinshedgardencafe.com',
+          web: 'https://tinshedgardencafe.com'
+        }
       ]
     },
     garda: {
       nombre: "Lago di Garda, Italia",
       imagen: '../img/garda-italy.jpg',
-      alt: 'Lago di Garda',
-      descripcion: 'Cocina italiana tradicional con vistas al lago.',
       restaurantes: [
-        { nombre: 'Ristorante Gardenia', tipo: 'Italiano', descripcion: 'Terraza al lago, pet friendly.' },
-        { nombre: 'Trattoria Al Pescatore', tipo: 'Pescados', descripcion: 'Pescados frescos, acepta mascotas.' },
-        { nombre: 'Osteria Il Gallo', tipo: 'Rústico', descripcion: 'Ambiente acogedor para mascotas.' }
+        {
+          id: 'gardenia',
+          nombre: 'Ristorante Gardenia',
+          tipoCocina: 'local',
+          descripcion: 'Cocina italiana tradicional en terraza con vistas al lago, pet friendly.',
+          imagen: '../img/garda-italy.jpg',
+          comensales: '3-4',
+          direccion: 'Via Gardesana, 45',
+          telefono: '+39 045 740 5566',
+          email: 'info@ristorantegardenia.it',
+          web: 'https://ristorantegardenia.it'
+        },
+        {
+          id: 'pescatore',
+          nombre: 'Trattoria Al Pescatore',
+          tipoCocina: 'local',
+          descripcion: 'Especialidad en pescados frescos del lago, acepta mascotas en exterior.',
+          imagen: '../img/garda-italy.jpg',
+          comensales: '5+',
+          direccion: 'Lungolago Zanardelli, 12',
+          telefono: '+39 045 627 0022',
+          email: 'reservas@alpescatore.it',
+          web: ''
+        }
       ]
     }
   };
 
   // =======================================================
-  // 🐾 TABS DE RESTAURANTES POR DESTINO
+  // 🔍 BUSCADOR INTEGRADO - Lógica principal
   // =======================================================
-  const tabs = document.querySelectorAll('.tabs-epoca .tab');
-  const epocaImagen = document.getElementById('epocaImagen');
-  const epocaLista = document.getElementById('epocaLista');
-
-  // Función para actualizar la vista
-  function actualizarVista(destinoKey) {
-    const data = destinosData[destinoKey];
-    if (!data) return;
-
-    // Cambiar la imagen
-    epocaImagen.src = data.imagen;
-    epocaImagen.alt = data.alt;
-
-    // Cambiar la lista
-    epocaLista.innerHTML = '';
-    data.restaurantes.forEach(r => {
-      const li = document.createElement('li');
-      li.innerHTML = `<strong>${r.nombre}</strong> (${r.tipo}): ${r.descripcion}`;
-      epocaLista.appendChild(li);
-    });
-
-    // Actualizar tabs activos
-    tabs.forEach(t => {
-      t.classList.toggle('active', t.dataset.destino === destinoKey);
-    });
-  }
-
-  // Event listeners para tabs
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      actualizarVista(tab.dataset.destino);
+  
+  // Elementos del DOM
+  const selectDestino = document.getElementById('destino');
+  const selectPersonas = document.getElementById('personas');
+  const selectRestaurante = document.getElementById('restaurante');
+  const btnBuscar = document.getElementById('btnBuscar');
+  const resultadoContainer = document.getElementById('resultadoContainer');
+  
+  // Botones de tipo de cocina
+  const botonesTypoCocina = document.querySelectorAll('.selector-btn[data-tipo]');
+  let tipoCocinaSeleccionado = '';
+  
+  // Nombres legibles
+  const nombresTipoCocina = {
+    local: 'Cocina local',
+    internacional: 'Internacional',
+    cafe: 'Cafés & Brunch',
+    todos: 'Todos'
+  };
+  
+  // Event listener para botones de tipo de cocina
+  botonesTypoCocina.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle: si ya está activo, lo desactiva
+      const tipo = btn.dataset.tipo;
+      
+      if (btn.classList.contains('active')) {
+        btn.classList.remove('active');
+        tipoCocinaSeleccionado = '';
+      } else {
+        // Desactivar todos y activar el clickeado
+        botonesTypoCocina.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        tipoCocinaSeleccionado = tipo === 'todos' ? '' : tipo;
+      }
+      
+      // Actualizar select de restaurantes si ya hay destino
+      if (selectDestino.value) {
+        actualizarSelectRestaurantes();
+      }
     });
   });
-
-  // =======================================================
-  // 🔍 BUSCADOR - Sincronizar con tabs
-  // =======================================================
-  const selectDestino = document.getElementById('destino');
-  const buscadorForm = document.getElementById('buscadorForm');
-
+  
+  // Función para actualizar el select de restaurantes
+  function actualizarSelectRestaurantes() {
+    if (!selectRestaurante || !selectDestino) return;
+    
+    const destinoKey = selectDestino.value;
+    
+    // Limpiar opciones
+    selectRestaurante.innerHTML = '';
+    
+    if (!destinoKey) {
+      selectRestaurante.disabled = true;
+      selectRestaurante.innerHTML = '<option value="">Primero elegí un destino...</option>';
+      actualizarBotonBuscar();
+      return;
+    }
+    
+    const data = destinosData[destinoKey];
+    if (!data) return;
+    
+    // Filtrar por tipo de cocina si hay uno seleccionado
+    let restaurantesFiltrados = data.restaurantes;
+    if (tipoCocinaSeleccionado) {
+      restaurantesFiltrados = data.restaurantes.filter(r => r.tipoCocina === tipoCocinaSeleccionado);
+    }
+    
+    if (restaurantesFiltrados.length === 0) {
+      selectRestaurante.disabled = true;
+      selectRestaurante.innerHTML = '<option value="">No hay restaurantes de este tipo...</option>';
+      actualizarBotonBuscar();
+      return;
+    }
+    
+    // Habilitar y llenar
+    selectRestaurante.disabled = false;
+    selectRestaurante.innerHTML = '<option value="">-- Elegí un restaurante --</option>';
+    
+    restaurantesFiltrados.forEach(r => {
+      const option = document.createElement('option');
+      option.value = r.id;
+      option.textContent = r.nombre;
+      selectRestaurante.appendChild(option);
+    });
+    
+    actualizarBotonBuscar();
+  }
+  
+  // Función para validar y actualizar botón de búsqueda
+  function actualizarBotonBuscar() {
+    if (!btnBuscar) return;
+    
+    const destinoOk = selectDestino && selectDestino.value;
+    const restauranteOk = selectRestaurante && selectRestaurante.value;
+    
+    btnBuscar.disabled = !(destinoOk && restauranteOk);
+  }
+  
+  // Función para mostrar el resultado
+  function mostrarResultado() {
+    const destinoKey = selectDestino.value;
+    const restauranteId = selectRestaurante.value;
+    
+    if (!destinoKey || !restauranteId) return;
+    
+    const data = destinosData[destinoKey];
+    const restaurante = data.restaurantes.find(r => r.id === restauranteId);
+    
+    if (!restaurante) return;
+    
+    // Crear HTML del resultado
+    resultadoContainer.innerHTML = `
+      <div class="resultado-contenido">
+        <div class="resultado-imagen">
+          <img src="${restaurante.imagen}" alt="${restaurante.nombre}">
+        </div>
+        
+        <div class="resultado-info">
+          <h3>${restaurante.nombre}</h3>
+          <span class="resultado-tipo-badge">${nombresTipoCocina[restaurante.tipoCocina]}</span>
+          
+          <p class="resultado-descripcion">${restaurante.descripcion}</p>
+          
+          <div class="resultado-contacto">
+            <h4>📞 Información de contacto</h4>
+            <ul>
+              <li><strong>Dirección:</strong> ${restaurante.direccion}</li>
+              <li><strong>Teléfono:</strong> ${restaurante.telefono}</li>
+              <li><strong>Email:</strong> <a href="mailto:${restaurante.email}">${restaurante.email}</a></li>
+              ${restaurante.web ? `<li><strong>Web:</strong> <a href="${restaurante.web}" target="_blank">Visitar sitio</a></li>` : ''}
+            </ul>
+          </div>
+          
+          <div class="resultado-amenities">
+            <h4>🐾 Características pet friendly</h4>
+            <ul>
+              <li>Mesas en exterior</li>
+              <li>Bowls de agua disponibles</li>
+              <li>Personal amigable con mascotas</li>
+              <li>Comensales: ${selectPersonas.value}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  
+  // Event listeners
   if (selectDestino) {
     selectDestino.addEventListener('change', () => {
-      const destinoSeleccionado = selectDestino.value;
-      if (destinoSeleccionado && destinosData[destinoSeleccionado]) {
-        actualizarVista(destinoSeleccionado);
-        
-        // Scroll suave a la sección de resultados
-        document.querySelector('.mejor-epoca-section').scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
+      actualizarSelectRestaurantes();
+      
+      // Si se cambia el destino, limpiar resultado
+      if (resultadoContainer) {
+        resultadoContainer.innerHTML = `
+          <div class="resultado-placeholder">
+            <div class="placeholder-icon">🍽️</div>
+            <p>Seleccioná un restaurante para ver los detalles</p>
+          </div>
+        `;
       }
     });
   }
-
-  if (buscadorForm) {
-    buscadorForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const destinoSeleccionado = selectDestino.value;
-      
-      if (destinoSeleccionado && destinosData[destinoSeleccionado]) {
-        actualizarVista(destinoSeleccionado);
-        
-        // Scroll suave a la sección de resultados
-        document.querySelector('.mejor-epoca-section').scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      } else {
-        alert('Por favor, seleccioná un destino para buscar.');
-      }
+  
+  if (selectRestaurante) {
+    selectRestaurante.addEventListener('change', actualizarBotonBuscar);
+  }
+  
+  if (btnBuscar) {
+    btnBuscar.addEventListener('click', () => {
+      mostrarResultado();
     });
   }
 
