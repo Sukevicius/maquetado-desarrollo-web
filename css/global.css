@@ -532,9 +532,8 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
-  padding: 16px 32px;
-  max-width: 1400px;
-  margin: 0 auto;
+  padding: 16px 48px;
+  width: 100%;
   align-items: start;
 }
 
