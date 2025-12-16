@@ -460,6 +460,20 @@
     padding: 0;
   }
 
+  .buscador-section,
+  .mejor-epoca-section {
+    border-radius: 0;
+  }
+
+  .buscador-section h2,
+  .mejor-epoca-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .buscador-section p {
+    font-size: 0.9rem;
+  }
+
   .cardText button {
     font-size: 0.75rem;
     padding: 6px;
