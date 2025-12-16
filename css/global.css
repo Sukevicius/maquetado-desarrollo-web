@@ -529,34 +529,32 @@ button {
 }
 
 .footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
   padding: 16px;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
 }
 
 .footer-column {
-  flex: 0 1 auto;
-  min-width: 200px;
   padding: 0 16px;
 }
 
 .footer-column:nth-child(1) {
-  flex: 1;
   text-align: left;
+  justify-self: start;
 }
 
 .footer-column:nth-child(2) {
-  flex: 0 1 auto;
   text-align: center;
+  justify-self: center;
 }
 
 .footer-column:nth-child(3) {
-  flex: 1;
   text-align: right;
+  justify-self: end;
 }
 
 .footer-column h3,
