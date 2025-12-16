@@ -260,13 +260,12 @@ h2 {
 
 .slider-container {
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     gap: 16px;
     scroll-snap-type: x mandatory;
     padding: 0 1rem;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
 }
 
 .slider-container .card {
