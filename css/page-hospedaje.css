@@ -1173,14 +1173,16 @@
 
 /* Resultado con detalle */
 .resultado-contenido {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   min-height: 400px;
 }
 
 .resultado-imagen {
   position: relative;
-  min-height: 400px;
+  width: 100%;
+  height: 250px;
+  flex-shrink: 0;
 }
 
 .resultado-imagen img {
@@ -1195,7 +1197,7 @@
   flex-direction: column;
   gap: 15px;
   overflow-y: auto;
-  max-height: 500px;
+  flex: 1;
 }
 
 .resultado-info h3 {
@@ -1507,12 +1509,8 @@
 }
 
 @media (max-width: 900px) {
-  .resultado-contenido {
-    grid-template-columns: 1fr;
-  }
-  
   .resultado-imagen {
-    min-height: 250px;
+    height: 200px;
   }
 }
 
