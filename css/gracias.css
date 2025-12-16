@@ -4,7 +4,22 @@
 
 /* Main elemento */
 main.gracias-page {
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 40px;
+    background: linear-gradient(135deg, var(--pantone-tofu) 0%, var(--pantone-muskmelon) 100%);
+    margin: 0;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 /* Mostrar Header Sticky en esta página */
@@ -18,15 +33,7 @@ main.gracias-page {
 
 /* Página principal */
 .gracias-page {
-    max-width: 100%;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 120px 20px 40px;
-    background: linear-gradient(135deg, var(--pantone-tofu) 0%, var(--pantone-muskmelon) 100%);
-    margin: 0 auto;
+    /* Estilos redundantes removidos - ahora en main.gracias-page */
 }
 
 .gracias-container {
