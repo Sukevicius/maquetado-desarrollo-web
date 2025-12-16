@@ -2,6 +2,9 @@
 data/
 uploads/
 
+# IMPORTANTE: Ignora archivo de configuración de mail (credenciales sensibles)
+config_mail.php
+
 # Ignora archivos del sistema operativo
 .DS_Store
 Thumbs.db

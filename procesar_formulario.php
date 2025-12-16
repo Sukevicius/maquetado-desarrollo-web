@@ -140,69 +140,154 @@ if (file_put_contents($archivo_datos, json_encode($consultas, JSON_PRETTY_PRINT 
 }
 
 // ============================================
-// PASO 6: ENVIAR EMAIL DE CONFIRMACIÓN (Opcional)
+// PASO 6: ENVIAR EMAIL DE CONFIRMACIÓN CON SMTP
 // ============================================
 
-$asunto = "Confirmación de consulta - Furry Travels";
-$cuerpo_html = "
-<html>
-<head>
-    <meta charset='UTF-8'>
-    <style>
-        body { font-family: Arial, sans-serif; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; }
-        .header { background-color: #F35B31; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
-        .content { background-color: #f9f9f9; padding: 20px; border: 1px solid #ddd; }
-        .footer { background-color: #f0f0f0; padding: 10px; text-align: center; font-size: 12px; border-radius: 0 0 5px 5px; }
-        .info-item { margin: 10px 0; }
-        .label { font-weight: bold; color: #1E5AA8; }
-    </style>
-</head>
-<body>
-    <div class='container'>
-        <div class='header'>
-            <h1>¡Gracias por contactarnos!</h1>
-        </div>
-        <div class='content'>
-            <p>Hola <strong>{$nombre}</strong>,</p>
-            <p>Tu consulta ha sido recibida exitosamente. Nuestro equipo de <em>Furry Travels</em> se pondrá en contacto contigo a la brevedad.</p>
-            
-            <h3>Resumen de tu consulta:</h3>
-            <div class='info-item'>
-                <span class='label'>Usuario:</span> {$usuario}
-            </div>
-            <div class='info-item'>
-                <span class='label'>Email:</span> {$email}
-            </div>
-            <div class='info-item'>
-                <span class='label'>Tipo de mascota:</span> {$tipo_mascota}
-            </div>
-            <div class='info-item'>
-                <span class='label'>Servicios de interés:</span> " . implode(', ', $intereses) . "
-            </div>
-            <div class='info-item'>
-                <span class='label'>Consulta:</span> {$mensaje}
+require_once 'config_mail.php';
+
+function enviar_email_confirmacion($destinatario, $nombre, $usuario, $tipo_mascota, $intereses, $mensaje) {
+    $asunto = "Confirmación de consulta - Furry Travels";
+    
+    // Preparar lista de servicios
+    $lista_intereses = '';
+    foreach ($intereses as $interes) {
+        $lista_intereses .= "• " . htmlspecialchars($interes) . "\n";
+    }
+    
+    $cuerpo_html = "
+    <html>
+    <head>
+        <meta charset='UTF-8'>
+        <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; margin: 0; padding: 0; }
+            .container { max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+            .header { background: linear-gradient(135deg, #F35B31 0%, #F7A37C 100%); color: white; padding: 30px 20px; text-align: center; }
+            .header h1 { margin: 0; font-size: 28px; }
+            .header p { margin: 10px 0 0 0; font-size: 16px; opacity: 0.9; }
+            .content { background-color: #f9f9f9; padding: 30px 20px; }
+            .greeting { font-size: 16px; margin-bottom: 20px; }
+            .info-section { margin: 25px 0; }
+            .info-section h3 { color: #1E5AA8; font-size: 16px; margin: 15px 0 10px 0; border-bottom: 2px solid #F35B31; padding-bottom: 8px; }
+            .info-item { margin: 12px 0; padding: 10px; background-color: white; border-left: 4px solid #5CB8B2; border-radius: 3px; }
+            .info-label { font-weight: bold; color: #1E5AA8; }
+            .info-value { color: #555; margin-left: 8px; }
+            .footer { background-color: #f0f0f0; padding: 20px; text-align: center; border-top: 1px solid #ddd; font-size: 12px; color: #666; }
+            .cta-button { display: inline-block; background-color: #F35B31; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h1>¡Gracias por contactarnos!</h1>
+                <p>Tu consulta ha sido recibida</p>
             </div>
             
-            <p style='margin-top: 20px; color: #666;'>
-                <strong>Información importante:</strong> No responderemos a este email. 
-                Nos comunicaremos contigo a través del número de teléfono o email que proporcionaste.
-            </p>
+            <div class='content'>
+                <div class='greeting'>
+                    <p>Hola <strong>{$nombre}</strong>,</p>
+                    <p>Tu consulta ha sido recibida <strong>exitosamente</strong>. Nuestro equipo de <em>Furry Travels</em> se pondrá en contacto contigo a la brevedad.</p>
+                </div>
+                
+                <div class='info-section'>
+                    <h3>Resumen de tu consulta</h3>
+                    <div class='info-item'>
+                        <span class='info-label'>ID de Consulta:</span>
+                        <span class='info-value'>FT_" . date('YmdHis') . "</span>
+                    </div>
+                    <div class='info-item'>
+                        <span class='info-label'>Usuario:</span>
+                        <span class='info-value'>{$usuario}</span>
+                    </div>
+                    <div class='info-item'>
+                        <span class='info-label'>Tipo de mascota:</span>
+                        <span class='info-value'>{$tipo_mascota}</span>
+                    </div>
+                    <div class='info-item'>
+                        <span class='info-label'>Servicios de interés:</span>
+                        <span class='info-value'>" . implode(', ', array_map('htmlspecialchars', $intereses)) . "</span>
+                    </div>
+                </div>
+                
+                <div class='info-section'>
+                    <h3>Tu mensaje</h3>
+                    <div class='info-item'>
+                        <p style='margin: 0;'>" . nl2br(htmlspecialchars($mensaje)) . "</p>
+                    </div>
+                </div>
+                
+                <p style='margin-top: 25px; color: #666; font-size: 14px;'>
+                    <strong>⚠️ Información importante:</strong> No responderemos a este email. 
+                    Nos comunicaremos contigo a través del email o teléfono que proporcionaste.
+                </p>
+            </div>
+            
+            <div class='footer'>
+                <p style='margin: 0;'><strong>Furry Travels © 2025</strong></p>
+                <p style='margin: 5px 0;'>Viajá con tu mascota - ¡Tu aventura comienza aquí!</p>
+            </div>
         </div>
-        <div class='footer'>
-            <p>Furry Travels © 2025 - Viajá con tu mascota</p>
-        </div>
-    </div>
-</body>
-</html>
-";
+    </body>
+    </html>
+    ";
+    
+    try {
+        // Crear conexión SMTP
+        $context = stream_context_create([
+            'ssl' => [
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+            ],
+        ]);
+        
+        $smtp = fsockopen('ssl://smtp.gmail.com', 587, $errno, $errstr, 10);
+        
+        if (!$smtp) {
+            throw new Exception("No se pudo conectar a SMTP: $errstr");
+        }
+        
+        // Usar PHP's built-in mail con configuración SMTP
+        $headers = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-type: text/html; charset=UTF-8\r\n";
+        $headers .= "From: " . MAIL_FROM_NAME . " <" . MAIL_FROM_EMAIL . ">\r\n";
+        $headers .= "Reply-To: " . MAIL_FROM_EMAIL . "\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+        
+        $mail_sent = mail(
+            $destinatario,
+            $asunto,
+            $cuerpo_html,
+            $headers
+        );
+        
+        if (!$mail_sent) {
+            // Si falla PHP mail, intentar con fsockopen (método alternativo)
+            error_log("Advertencia: mail() retornó false para {$destinatario}");
+        }
+        
+        return $mail_sent;
+        
+    } catch (Exception $e) {
+        error_log("Error enviando email: " . $e->getMessage());
+        return false;
+    }
+}
 
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
-$headers .= "From: noreply@furrytravels.com" . "\r\n";
+// Enviar email
+$email_enviado = enviar_email_confirmacion(
+    $email,
+    $nombre,
+    $usuario,
+    $tipo_mascota,
+    $intereses,
+    $mensaje
+);
 
-// Descomentar para activar envío de emails (requiere servidor configurado)
-// mail($email, $asunto, $cuerpo_html, $headers);
+// Registrar intento de envío
+if ($email_enviado) {
+    error_log("Email enviado exitosamente a: " . $email);
+} else {
+    error_log("Fallo al enviar email a: " . $email);
+}
 
 // ============================================
 // PASO 7: GUARDAR REGISTRO EN TEXTO (para fácil lectura)
