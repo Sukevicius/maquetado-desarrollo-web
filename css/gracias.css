@@ -2,6 +2,11 @@
    Estilos página Gracias
 ===================== */
 
+/* Main elemento */
+main.gracias-page {
+    width: 100%;
+}
+
 /* Mostrar Header Sticky en esta página */
 .header-sticky-bar {
     display: flex !important;
@@ -13,7 +18,8 @@
 
 /* Página principal */
 .gracias-page {
-    max-width: 800px;
+    max-width: 100%;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
