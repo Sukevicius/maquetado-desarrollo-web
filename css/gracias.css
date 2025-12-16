@@ -13,12 +13,14 @@
 
 /* Página principal */
 .gracias-page {
+    max-width: 800px;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 120px 20px 40px;
     background: linear-gradient(135deg, var(--pantone-tofu) 0%, var(--pantone-muskmelon) 100%);
+    margin: 0 auto;
 }
 
 .gracias-container {
