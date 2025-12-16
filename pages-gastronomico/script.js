@@ -58,6 +58,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const botonesTypoCocina = document.querySelectorAll('.selector-btn[data-tipo]');
   let tipoCocinaSeleccionado = '';
   
+  // Poblar select de destinos
+  function poblarSelectDestinos() {
+    selectDestino.innerHTML = '<option value="">-- Elegí un destino --</option>';
+    Object.keys(destinosData).forEach(destinoKey => {
+      const option = document.createElement('option');
+      option.value = destinoKey;
+      option.textContent = destinosData[destinoKey].nombre;
+      selectDestino.appendChild(option);
+    });
+  }
+  
+  // Llamar al inicio
+  poblarSelectDestinos();
+  
   // Nombres legibles
   const nombresDestinos = {
     bariloche: 'Bariloche',

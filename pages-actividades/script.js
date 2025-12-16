@@ -34,6 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Función para inicializar la interfaz
   function inicializarInterfaz() {
 
+  // Poblar select de destinos
+  function poblarSelectDestinos() {
+    selectDestino.innerHTML = '<option value="">-- Elegí un destino --</option>';
+    Object.keys(destinosData).forEach(destinoKey => {
+      const option = document.createElement('option');
+      option.value = destinoKey;
+      option.textContent = destinosData[destinoKey].nombre;
+      selectDestino.appendChild(option);
+    });
+  }
+  
+  // Llamar al inicio
+  poblarSelectDestinos();
+  
   // Mapeo de nombres para display
   const nombresDestinos = {
     bariloche: 'Bariloche',
