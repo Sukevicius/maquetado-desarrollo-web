@@ -2,14 +2,15 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hospedaje - Furry Travels</title>
-  <link rel="stylesheet" href="../css/reset.css" >
-  <link rel="stylesheet" href="../css/global.css" >
-  <link rel="stylesheet" href="../css/page-hospedaje.css" >
-  <!-- Si usas Font Awesome, activa esta línea -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/page-hospedaje.css">
+  <link rel="stylesheet" href="../css/modal.css">
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
 </head>
 
 <body>
@@ -17,48 +18,215 @@
   <div class="header-sticky-bar sticky-layout" id="menuSticky">
     <div class="logo">
       <a href="../index.html" class="logoImg">
-        <img src="../img/logofinal.png" alt="Logo de TP1" >
+        <img src="../img/logofinal.png" alt="Logo de TP1">
       </a>
-      <h1>Furry Travels</h1>
+      <span class="logo-text">Furry Travels</span>
     </div>
     <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">☰</button>
     <nav class="menu" id="navMenu">
-      <a href="#lugares" class="button"><strong>LUGARES</strong></a>
-      <a href="#servicios" class="button"><strong>SERVICIOS</strong></a>
-      <a href="#contacto" class="button"><strong>CONTACTO</strong></a>
+      <ul>
+        <li><a href="../index.html#lugares" class="button"><strong>LUGARES</strong></a></li>
+        <li><a href="../index.html#servicios" class="button"><strong>SERVICIOS</strong></a></li>
+        <li><a href="../contacto.html" class="button"><strong>CONTACTO</strong></a></li>
+      </ul>
     </nav>
   </div>
+  <!-- Banner de página -->
+  <section class="page-banner" style="background-image: url('../img/dalmatahotel.png');">
+    <div class="banner-overlay">
+      <h1>HOSPEDAJE</h1>
+      <p>Encontrá los mejores alojamientos <em>pet friendly</em> para vos y tu mascota</p>
+    </div>
+  </section>
+  <!-- Header de Servicios -->
+  <section class="servicios-header">
+    <div class="vertical-title" aria-hidden="true">SERVICIOS</div>
+    <div class="accordion-container">
+      <div class="accordion-item active" style="background-image: url('../img/dalmatahotel.png');">
+        <a href="hospedaje.html">HOSPEDAJE</a>
+      </div>
+      <div class="accordion-item" style="background-image: url('../img/salchiDepto.png');">
+        <a href="../pages-gastronomico/gastronomia.html">GASTRONOMÍA</a>
+      </div>
+      <div class="accordion-item" style="background-image: url('../img/grandanesCasa.png');">
+        <a href="../pages-actividades/actividades.html">ACTIVIDADES</a>
+      </div>
+    </div>
+  </section>
+
+
 
   <main class="hospedaje-page">
-    <!-- Buscador -->
-    <section class="buscador-section">
-      <h2>¿Buscás el hospedaje ideal para vos y tu mascota?</h2>
-      <p>Encontrá alojamientos pet friendly con las mejores ofertas.</p>
-      <form class="buscador-form">
-        <div class="buscador-input">
-          <label for="destino"><i class="fas fa-search"></i> Destino</label>
-          <input type="text" id="destino" placeholder="¿Dónde querés ir?" />
-        </div>
-        <div class="buscador-input">
-          <label for="llegada"><i class="fas fa-calendar-alt"></i> Llegada</label>
-          <input type="date" id="llegada" />
-        </div>
-        <div class="buscador-input">
-          <label for="salida"><i class="fas fa-calendar-alt"></i> Salida</label>
-          <input type="date" id="salida" />
-        </div>
-        <div class="buscador-input">
-          <label for="personas"><i class="fas fa-user-friends"></i> Personas/Habitaciones</label>
-          <select id="personas">
-            <option>1 huésped</option>
-            <option>2 huéspedes</option>
-            <option>3 huéspedes</option>
+    <!-- Buscador Integrado -->
+    <section class="buscador-integrado" id="buscadorIntegrado">
+      <div class="buscador-header">
+        <h2>¿Buscás el hospedaje ideal para vos y tu mascota?</h2>
+        <p>Seleccioná las opciones y explorá los resultados en tiempo real</p>
+      </div>
+      
+      <!-- Layout de dos columnas -->
+      <div class="buscador-layout">
+        <!-- Columna izquierda: Selectores -->
+        <div class="buscador-columna-izquierda">
+          <!-- Selectores en formato select -->
+          <div class="selector-tabs-container">
+        <!-- Fila 1: Destino -->
+        <div class="selector-row" id="rowDestino">
+          <label class="selector-label" for="selectDestino"><span class="material-symbols-outlined">location_on</span> Destino:</label>
+          <select class="selector-select" id="selectDestino">
+            <option value="">-- Elegí un destino --</option>
+            <optgroup label="Argentina">
+              <option value="bariloche">🏔️ Bariloche</option>
+              <option value="sanmartin">🏔️ San Martín de los Andes</option>
+              <option value="angostura">🏞️ Villa La Angostura</option>
+              <option value="elbolson">🌲 El Bolsón</option>
+              <option value="sanrafael">🍷 San Rafael, Mendoza</option>
+              <option value="belgrano">🏔️ Villa Gral. Belgrano, Córdoba</option>
+              <option value="tandil">⛰️ Tandil, Buenos Aires</option>
+              <option value="mardlaspampas">🏖️ Mar de las Pampas</option>
+            </optgroup>
+            <optgroup label="Internacional">
+              <option value="sansebastian">🌊 San Sebastián, España</option>
+              <option value="portland">🌲 Portland, EE.UU.</option>
+              <option value="garda">🇮🇹 Lago di Garda, Italia</option>
+              <option value="colonia">🇺🇾 Colonia del Sacramento, Uruguay</option>
+              <option value="florianopolis">🇧🇷 Florianópolis, Brasil</option>
+            </optgroup>
           </select>
         </div>
-        <button type="submit">Buscar</button>
-      </form>
+        
+        <!-- Fila 2: Tipo de alojamiento -->
+        <div class="selector-row" id="rowTipo">
+          <label class="selector-label" for="selectTipo"><span class="material-symbols-outlined">home</span> Tipo:</label>
+          <select class="selector-select" id="selectTipo">
+            <option value="">Todos los tipos</option>
+            <option value="hotel">🏨 Hotel</option>
+            <option value="departamento">🏢 Departamento</option>
+            <option value="casa">🏡 Casa / Cabaña</option>
+          </select>
+        </div>
+        
+        <!-- Fila 3: Hospedajes (se llenan dinámicamente) -->
+        <div class="selector-row" id="rowHospedaje">
+          <label class="selector-label" for="selectHospedaje"><span class="material-symbols-outlined">bed</span> Hospedaje:</label>
+          <select class="selector-select" id="selectHospedaje" disabled>
+            <option value="">Primero elegí un destino...</option>
+          </select>
+        </div>
+        
+        <!-- Fila 4: Temporada -->
+        <div class="selector-row" id="rowTemporada">
+          <label class="selector-label" for="selectTemporada"><span class="material-symbols-outlined">calendar_month</span> Temporada:</label>
+          <select class="selector-select" id="selectTemporada">
+            <option value="">Todas las temporadas</option>
+            <option value="primavera">🌸 Primavera</option>
+            <option value="verano">☀️ Verano</option>
+            <option value="otono">🍂 Otoño</option>
+            <option value="invierno">❄️ Invierno</option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Botón de búsqueda -->
+      <button class="btn-buscar" id="btnBuscar" disabled>
+        <span class="material-symbols-outlined">search</span>
+        Buscar hospedaje
+      </button>
+        </div>
+        
+        <!-- Columna derecha: Resumen y Resultados -->
+        <div class="buscador-columna-derecha">
+          <!-- Resumen de selección (botones clickeables) -->
+          <div class="seleccion-resumen" id="seleccionResumen">
+        <button class="resumen-btn" id="resumenDestino" data-target="destino" title="Cambiar destino">--</button>
+        <span class="resumen-separador">›</span>
+        <button class="resumen-btn" id="resumenTipo" data-target="tipo" title="Cambiar tipo">--</button>
+        <span class="resumen-separador">›</span>
+        <button class="resumen-btn" id="resumenHospedaje" data-target="hospedaje" title="Cambiar hospedaje">--</button>
+        <span class="resumen-separador">›</span>
+        <button class="resumen-btn" id="resumenTemporada" data-target="temporada" title="Cambiar temporada">--</button>
+        <span class="resumen-separador">›</span>
+        <button class="btn-limpiar-resumen" id="btnLimpiar" title="Limpiar selección">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      
+      <!-- Resultado dinámico -->
+      <div class="resultado-container" id="resultadoContainer">
+        <div class="resultado-placeholder" id="resultadoPlaceholder">
+          <div class="placeholder-icon"><span class="material-symbols-outlined md-48">hotel</span></div>
+          <p>Seleccioná un destino para ver los hospedajes disponibles</p>
+        </div>
+        
+        <div class="resultado-contenido" id="resultadoContenido" style="display: none;">
+          <div class="resultado-imagen">
+            <img id="resultadoImagen" src="" alt="Hospedaje" />
+            <span class="temporada-badge" id="resultadoTemporadaBadge"></span>
+          </div>
+          <div class="resultado-info">
+            <h3 id="resultadoNombre">Nombre del Hospedaje</h3>
+            <p class="resultado-tipo-badge" id="resultadoTipoBadge">Tipo</p>
+            <p class="resultado-descripcion" id="resultadoDescripcion">Descripción</p>
+            
+            <div class="resultado-contacto">
+              <h4><span class="material-symbols-outlined">phone</span> Contacto</h4>
+              <ul>
+                <li><strong>Tel:</strong> <span id="resultadoTelefono"></span></li>
+                <li><strong>Email:</strong> <span id="resultadoEmail"></span></li>
+                <li><strong>Dirección:</strong> <span id="resultadoDireccion"></span></li>
+                <li><strong>Web:</strong> <a id="resultadoWeb" href="#" target="_blank"></a></li>
+              </ul>
+            </div>
+            
+            <div class="resultado-amenities">
+              <h4><span class="material-symbols-outlined">pets</span> Servicios Pet Friendly</h4>
+              <ul id="resultadoAmenities"></ul>
+            </div>
+            
+            <!-- Info de temporada -->
+            <div class="resultado-temporada-info" id="resultadoTemporadaInfo" style="display: none;">
+              <div class="temporada-header">
+                <h4 id="temporadaTitulo">🌸 Viajás en Primavera</h4>
+                <span class="temporada-temp" id="temporadaTemp">12°C - 22°C</span>
+              </div>
+              <p class="temporada-consejos" id="temporadaConsejos"></p>
+              <div class="temporada-cuidados">
+                <h5><span class="material-symbols-outlined">pets</span> Cuidados para tu mascota:</h5>
+                <ul id="temporadaCuidados"></ul>
+              </div>
+              <div class="temporada-alerta" id="temporadaAlerta"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Lista de hospedajes cuando no hay uno específico seleccionado -->
+        <div class="resultado-lista" id="resultadoLista" style="display: none;">
+          <h3 id="listatitulo">Hospedajes disponibles</h3>
+          <div class="lista-hospedajes" id="listaHospedajes"></div>
+        </div>
+        
+        <!-- Info de temporada (cuando no hay hospedaje seleccionado) -->
+        <div class="temporada-info-standalone" id="temporadaInfoStandalone" style="display: none;">
+          <div class="temporada-card">
+            <div class="temporada-card-header">
+              <span class="temporada-emoji" id="temporadaEmojiStandalone">🌸</span>
+              <div>
+                <h3 id="temporadaTituloStandalone">Primavera</h3>
+                <span class="temporada-temp-big" id="temporadaTempStandalone">12°C - 22°C</span>
+              </div>
+            </div>
+            <p class="temporada-descripcion" id="temporadaConsejosStandalone"></p>
+            <div class="temporada-cuidados-card">
+              <h4><span class="material-symbols-outlined">pets</span> Cuidados para tu mascota:</h4>
+              <ul id="temporadaCuidadosStandalone"></ul>
+            </div>
+            <div class="temporada-alerta-card" id="temporadaAlertaStandalone"></div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
     </section>
-
     <!-- Destacados -->
     <div class="sectionContenedor">
       <section id="lugares" class="seclugares">
@@ -71,33 +239,43 @@
             <button class="arrow left" id="prevBtn">‹</button>
 
             <div class="slider-container" id="cardSlider">
-              <!-- Card 1 -->
+              <!-- Card 1 - Bariloche -->
               <article class="card">
-                <img src="../img/puerto-blest-y-cascada.jpg" alt="Buenos Aires" class="imgCard" />
-                <div class="cardText">
-                  <h3>Buenos Aires</h3>
-                  <p>+50 alojamientos pet friendly para vos y tu mascota.</p>
-                  <a href="pages-cards/buenosaires.html" target="_parent" class="card-button">Ver más</a>
-                </div>
-              </article>
-
-              <!-- Card 2 -->
-              <article class="card">
-                <img src="../img/garda-italy.jpg" alt="Bariloche" class="imgCard" />
+                <img src="../img/puerto-blest-y-cascada.jpg" alt="Bariloche" class="imgCard" />
                 <div class="cardText">
                   <h3>Bariloche</h3>
                   <p>+30 alojamientos pet friendly entre montañas y lagos.</p>
-                  <a href="pages-cards/bariloche.html" target="_parent" class="card-button">Ver más</a>
+                  <button class="card-button" data-modal="bariloche">Ver más</button>
                 </div>
               </article>
 
-              <!-- Card 3 -->
+              <!-- Card 2 - San Sebastián -->
               <article class="card">
-                <img src="../img/portland-city.jpg" alt="Mar del Plata" class="imgCard" />
+                <img src="../img/SanSebastian.png" alt="San Sebastián" class="imgCard" />
                 <div class="cardText">
-                  <h3>Mar del Plata</h3>
-                  <p>+20 opciones pet friendly frente al mar.</p>
-                  <a href="pages-cards/mardelplata.html" target="_parent" class="card-button">Ver más</a>
+                  <h3>San Sebastián</h3>
+                  <p>+25 opciones pet friendly en el País Vasco.</p>
+                  <button class="card-button" data-modal="san-sebastian">Ver más</button>
+                </div>
+              </article>
+
+              <!-- Card 3 - Portland -->
+              <article class="card">
+                <img src="../img/portland-city.jpg" alt="Portland" class="imgCard" />
+                <div class="cardText">
+                  <h3>Portland</h3>
+                  <p>+50 alojamientos en la ciudad más pet friendly de EE.UU.</p>
+                  <button class="card-button" data-modal="portland">Ver más</button>
+                </div>
+              </article>
+
+              <!-- Card 4 - Lago di Garda -->
+              <article class="card">
+                <img src="../img/garda-italy.jpg" alt="Lago di Garda" class="imgCard" />
+                <div class="cardText">
+                  <h3>Lago di Garda</h3>
+                  <p>+20 opciones pet friendly en el norte de Italia.</p>
+                  <button class="card-button" data-modal="garda">Ver más</button>
                 </div>
               </article>
             </div>
@@ -107,31 +285,239 @@
         </div>
       </section>
     </div>
-
-
-    <!-- Mejor época -->
-    <section class="mejor-epoca-section">
-      <h2>La mejor época para viajar con tu mascota</h2>
-      <div class="tabs-epoca">
-        <button class="tab active" data-destino="buenosaires">Buenos Aires</button>
-        <button class="tab" data-destino="bariloche">Bariloche</button>
-        <button class="tab" data-destino="mardelplata">Mar del Plata</button>
-      </div>
-      <div class="epoca-contenido">
-        <img id="epocaImagen" src="../img/buenosaires.jpg" alt="Buenos Aires" />
-        <ul id="epocaLista">
-          <li><strong>Junio:</strong> Clima templado y menos turistas.</li>
-          <li><strong>Julio:</strong> Temporada alta, muchas actividades.</li>
-          <li><strong>Agosto:</strong> Ideal para paseos con tu mascota.</li>
-        </ul>
+    <!-- Sección CTA Contacto -->
+    <section class="seccontacto-preview">
+      <header>
+        <h2>¿QUERÉS VIAJAR CON TU MASCOTA?</h2>
+      </header>
+      <div class="contacto-preview-content">
+        <video class="video-bg-preview" autoplay loop muted>
+          <source src="../img/familia.mp4" type="video/mp4">
+        </video>
+        <div class="contacto-preview-overlay">
+          <div class="contacto-preview-text">
+            <p><strong>¡Contactanos!</strong> Completá nuestro formulario y planificamos juntos tu próxima aventura pet
+              friendly.</p>
+            <ul class="contacto-preview-features">
+              <li>📧 Respuesta en menos de 24hs</li>
+              <li>🐾 Asesoramiento personalizado</li>
+              <li>✈️ Destinos en todo el mundo</li>
+            </ul>
+            <a href="../contacto.html" class="btn-contacto-preview">Ir al formulario de contacto</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- MODALES DE LUGARES -->
+
+  <!-- Modal Bariloche -->
+  <div class="modal-overlay" id="modal-bariloche">
+    <div class="modal-container">
+      <div class="modal-header" style="background-image: url('../img/puerto-blest-y-cascada.jpg');">
+        <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+        <h2>Bariloche, Argentina</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-intro">
+          <p>Bariloche es un destino <em>relativamente amigable</em> con las mascotas, especialmente perros. Hay opciones de alojamiento, restaurantes y actividades que permiten la compañía de animales.</p>
+        </div>
+        <div class="modal-accordion">
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Alojamiento <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <ul>
+                <li>Selina Bariloche</li>
+                <li>Hotel Hampton by Hilton Bariloche</li>
+                <li>Pailahue Lodge y Cabañas</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Gastronomía <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <ul>
+                <li>Maleza</li>
+                <li>Chiado</li>
+                <li>Punto Panorámico</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Actividades <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <p><strong>Senderos y naturaleza:</strong> Villa Coihues, Cerro Catedral.</p>
+              <p><strong>Playas:</strong> Playa Bonita, Bahía Serena, Playa Del Viento.</p>
+            </div>
+          </div>
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Consejos <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <ul>
+                <li>Llevá agua y comida para tu mascota</li>
+                <li>Vacunas y documentación al día</li>
+                <li>Respetá las normas de cada lugar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal btn-cerrar">Cerrar</button>
+        <a href="../contacto.html" class="btn-modal btn-reservar">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal San Sebastián -->
+  <div class="modal-overlay" id="modal-san-sebastian">
+    <div class="modal-container">
+      <div class="modal-header" style="background-image: url('../img/SanSebastian.png');">
+        <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+        <h2>San Sebastián, España</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-intro">
+          <p>San Sebastián es una ciudad <em>muy pet friendly</em> en el País Vasco. Sus playas, pintxos bars y paseos costeros son ideales para disfrutar con tu mascota.</p>
+        </div>
+        <div class="modal-accordion">
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Alojamiento <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <ul>
+                <li>Hotel Arbaso</li>
+                <li>Pensión Aldamar</li>
+                <li>Hotel de Londres y de Inglaterra</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Gastronomía <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <ul>
+                <li>Bar Nestor</li>
+                <li>La Cuchara de San Telmo</li>
+                <li>Gandarias</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Actividades <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <p><strong>Playas para perros:</strong> Playa de Ondarreta (temporada baja).</p>
+              <p><strong>Paseos:</strong> Monte Urgull, Paseo de La Concha.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal btn-cerrar">Cerrar</button>
+        <a href="../contacto.html" class="btn-modal btn-reservar">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Portland -->
+  <div class="modal-overlay" id="modal-portland">
+    <div class="modal-container">
+      <div class="modal-header" style="background-image: url('../img/portland-city.jpg');">
+        <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+        <h2>Portland, Oregón (EE.UU.)</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-intro">
+          <p>Portland es considerada una de las ciudades <em>más pet friendly</em> de Estados Unidos. Cuenta con más parques para perros per cápita que cualquier otra ciudad del país.</p>
+        </div>
+        <div class="modal-accordion">
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Alojamiento <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <ul>
+                <li>Hotel Monaco Portland</li>
+                <li>The Nines</li>
+                <li>Ace Hotel Portland</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Gastronomía <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <ul>
+                <li>Lucky Labrador Brewing Company</li>
+                <li>Tin Shed Garden Cafe</li>
+                <li>Hawthorne Hophouse</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Actividades <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <p><strong>Parques:</strong> Forest Park, Mt. Tabor Park.</p>
+              <p><strong>Dog Parks:</strong> Sellwood Riverfront Park, Chimney Park.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal btn-cerrar">Cerrar</button>
+        <a href="../contacto.html" class="btn-modal btn-reservar">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Lago di Garda -->
+  <div class="modal-overlay" id="modal-garda">
+    <div class="modal-container">
+      <div class="modal-header" style="background-image: url('../img/garda-italy.jpg');">
+        <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+        <h2>Lago di Garda, Italia</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-intro">
+          <p>El Lago di Garda es el lago más grande de Italia y un destino <em>muy acogedor</em> para viajeros con mascotas. Sus pueblos pintorescos y paisajes alpinos son perfectos para explorar.</p>
+        </div>
+        <div class="modal-accordion">
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Alojamiento <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <ul>
+                <li>Hotel Lido Palace</li>
+                <li>Lefay Resort & SPA</li>
+                <li>Hotel Bella Riva</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Gastronomía <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <ul>
+                <li>Ristorante Esplanade</li>
+                <li>Trattoria La Fiasca</li>
+                <li>Al Bacio Restaurant</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-accordion-item">
+            <button class="modal-accordion-header">Actividades <span class="modal-accordion-icon">▼</span></button>
+            <div class="modal-accordion-content">
+              <p><strong>Playas para perros:</strong> Bau Beach en Peschiera.</p>
+              <p><strong>Paseos:</strong> Sirmione, Malcesine, Limone sul Garda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal btn-cerrar">Cerrar</button>
+        <a href="../contacto.html" class="btn-modal btn-reservar">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </div>
+
   <footer class="footerTP">
     <div class="footer-container">
       <div class="footer-column">
-        <h3>¿QUIENES SOMOS?</h3>
+        <div class="footer-title">¿QUIENES SOMOS?</div>
         <ul>
           <li><strong>Alumna:</strong> Sukevicius Samanta - <strong>DNI:</strong> 32.584.131</li>
           <li><strong>Materia:</strong> Maquetado y Desarrollo Web</li>
@@ -140,7 +526,7 @@
         </ul>
       </div>
       <div class="footer-column">
-        <h3>SÍGUENOS EN REDES</h3>
+        <div class="footer-title">SÍGUENOS EN REDES</div>
         <div class="social-icons">
           <a href="#"><img src="../img/twiter.svg" alt="Twitter"></a>
           <a href="#"><img src="../img/instagram.svg" alt="Instagram"></a>
@@ -150,7 +536,7 @@
         </div>
       </div>
       <div class="footer-column">
-        <h3>¿QUÉ HACEMOS?</h3>
+        <div class="footer-title">¿QUÉ HACEMOS?</div>
         <ul>
           <li>Entrega correspondiente al 1° cuatrimestre</li>
           <li><strong>Institución:</strong> Escuela Da Vinci - Año 2025</li>
@@ -162,7 +548,10 @@
     </div>
   </footer>
 
-  <script src="../js/script.js"></script>
+  <!-- Cargar datos de hospedajes primero -->
+  <script src="hospedajes-data.js"></script>
+  <!-- Luego cargar la lógica principal -->
+  <script src="script.js"></script>
 </body>
 
 </html>

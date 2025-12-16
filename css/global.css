@@ -1,56 +1,389 @@
-/* =====================
-   🎨 Paleta de colores de referencia
-===================== */
-
-/* =====================
-   Tipografía y colores base
-===================== */
+/* =====================================================
+   🎨 FURRY TRAVELS - Variables CSS Globales
+   Sistema de diseño unificado para todo el sitio
+===================================================== */
 
 :root {
-  --pantone-mandarin-orange: #F35B31;
-  --pantone-habanero-gold: #FFD04C;
-  --pantone-muskmelon: #F7A37C;
-  --pantone-aquarelle: #5CB8B2;
-  --pantone-blue-iolite: #1E5AA8;
-  --pantone-tofu: #EAE6DF;
+  /* ===== Paleta de Colores Principales ===== */
+  --pantone-mandarin-orange: #F35B31;  /* Naranja vibrante - Acciones/CTA */
+  --pantone-habanero-gold: #FFD04C;    /* Amarillo dorado - Destacados */
+  --pantone-muskmelon: #F7A37C;        /* Naranja suave - Detalles */
+  --pantone-aquarelle: #5CB8B2;        /* Verde agua - Info/Tips */
+  --pantone-blue-iolite: #1E5AA8;      /* Azul principal - Texto/Headers */
+  --pantone-tofu: #EAE6DF;             /* Beige claro - Fondo */
+
+  /* ===== Colores Extendidos ===== */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-success: #4CAF50;
+  --color-warning: #FF9800;
+  --color-error: #F44336;
+  --color-info: var(--pantone-aquarelle);
+
+  /* ===== Grises ===== */
+  --gray-50: #FAFAFA;
+  --gray-100: #F5F5F5;
+  --gray-200: #EEEEEE;
+  --gray-300: #E0E0E0;
+  --gray-400: #BDBDBD;
+  --gray-500: #9E9E9E;
+  --gray-600: #757575;
+  --gray-700: #616161;
+  --gray-800: #424242;
+  --gray-900: #212121;
+
+  /* ===== Radios de Borde ===== */
+  --border-radius-xl: 16px;
   --border-radius-l: 12px;
   --border-radius-m: 8px;
   --border-radius-s: 6px;
+  --border-radius-xs: 4px;
+  --border-radius-round: 50%;
+  --border-radius-pill: 9999px;
+
+  /* ===== Espaciados ===== */
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* ===== Sombras ===== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+  /* ===== Tipografía ===== */
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-family-heading: inherit;
+  
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ===== Transiciones ===== */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+
+  /* ===== Z-index ===== */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+
+  /* ===== Contenedores ===== */
+  --container-max-width: 1200px;
+  --container-padding: var(--spacing-m);
+}
+
+/* ===== Estilos Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background-color: #EAE6DF;
+  background-color: var(--pantone-tofu);
   color: var(--pantone-blue-iolite);
-  font-size: 16px;
-  line-height: 1.5;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--spacing-m);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--spacing-m);
+  flex: 1;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: bold;
+/* ===== Tipografía ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-top: 0;
+  margin-bottom: var(--spacing-m);
+  color: var(--pantone-blue-iolite);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-3xl);
   text-align: center;
 }
 
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+}
+
+a {
+  color: var(--pantone-blue-iolite);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--pantone-mandarin-orange);
+}
+
+a:focus {
+  outline: 2px solid var(--pantone-aquarelle);
+  outline-offset: 2px;
+}
+
+/* Clase para ocultar visualmente pero mantener accesibilidad */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 p {
-  font-size: 1rem;
-  margin-bottom: 16px;
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-m);
+  color: var(--pantone-blue-iolite);
+  line-height: var(--line-height-relaxed);
+}
+
+strong, b {
+  font-weight: var(--font-weight-bold);
+}
+
+em, i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--font-size-sm);
+}
+
+/* ===== Listas ===== */
+ul, ol {
+  margin-bottom: var(--spacing-m);
+  padding-left: var(--spacing-l);
+}
+
+li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* ===== Imágenes ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Botones Base ===== */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-s);
+  padding: var(--spacing-m) var(--spacing-l);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--border-radius-m);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--pantone-mandarin-orange);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: #d94b23;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--pantone-aquarelle);
+  color: var(--color-white);
+}
+
+.btn-secondary:hover {
+  background-color: #4a9a95;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--pantone-blue-iolite);
   color: var(--pantone-blue-iolite);
 }
+
+.btn-outline:hover {
+  background-color: var(--pantone-blue-iolite);
+  color: var(--color-white);
+}
+
+.btn-sm {
+  padding: var(--spacing-s) var(--spacing-m);
+  font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+  padding: var(--spacing-l) var(--spacing-xl);
+  font-size: var(--font-size-lg);
+}
+
+/* ===== Material Symbols Outlined ===== */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  vertical-align: middle;
+}
+
+/* Tamaños de iconos */
+.material-symbols-outlined.md-18 { font-size: 18px; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; }
+.material-symbols-outlined.md-24 { font-size: 24px; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.material-symbols-outlined.md-36 { font-size: 36px; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 40; }
+.material-symbols-outlined.md-48 { font-size: 48px; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+
+/* Variantes de peso */
+.material-symbols-outlined.md-light { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+.material-symbols-outlined.md-regular { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.material-symbols-outlined.md-bold { font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 24; }
+
+/* Variante filled */
+.material-symbols-outlined.md-filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+/* Colores de iconos */
+.material-symbols-outlined.md-primary { color: var(--pantone-blue-iolite); }
+.material-symbols-outlined.md-accent { color: var(--pantone-mandarin-orange); }
+.material-symbols-outlined.md-white { color: var(--color-white); }
+.material-symbols-outlined.md-dark { color: rgba(0, 0, 0, 0.54); }
+
+/* ===== Utilidades ===== */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-s); }
+.mt-3 { margin-top: var(--spacing-m); }
+.mt-4 { margin-top: var(--spacing-l); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-s); }
+.mb-3 { margin-bottom: var(--spacing-m); }
+.mb-4 { margin-bottom: var(--spacing-l); }
+
+.pt-1 { padding-top: var(--spacing-xs); }
+.pt-2 { padding-top: var(--spacing-s); }
+.pt-3 { padding-top: var(--spacing-m); }
+.pt-4 { padding-top: var(--spacing-l); }
+
+.pb-1 { padding-bottom: var(--spacing-xs); }
+.pb-2 { padding-bottom: var(--spacing-s); }
+.pb-3 { padding-bottom: var(--spacing-m); }
+.pb-4 { padding-bottom: var(--spacing-l); }
 
 /* =====================
    Header Sticky
@@ -81,9 +414,12 @@ p {
   gap: 12px;
 }
 
-.header-sticky-bar .logo h1 {
-  font-size: 1.5rem;
+.header-sticky-bar .logo h1,
+.header-sticky-bar .logo .logo-text {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
   color: var(--pantone-blue-iolite);
+  margin: 0;
 }
 .header-sticky-bar nav.menu a{
   text-decoration: none;
@@ -93,6 +429,25 @@ p {
   display: flex;
   flex-direction: row;
   gap: 12px;
+}
+
+/* Estilos para listas dentro del menú de navegación */
+.header-sticky-bar nav.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.header-sticky-bar nav.menu ul li {
+  list-style: none;
+  display: inline;
+}
+
+.header-sticky-bar nav.menu ul li a {
+  text-decoration: none;
 }
 
 .header-sticky-bar nav.menu .button {
@@ -108,7 +463,7 @@ p {
 
 .header-sticky-bar nav.menu .button:hover {
   background-color: var(--pantone-blue-iolite);
-  color: white;
+  color: var(--color-white);
 }
 
 /* Hamburguesa */
@@ -148,6 +503,11 @@ p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 
+  .header-sticky-bar nav.menu ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .header-sticky-bar nav.menu.show {
     display: flex;
   }
@@ -181,10 +541,12 @@ p {
   padding: 0 16px;
 }
 
-.footer-column h3 {
-  font-size: 1rem;
+.footer-column h3,
+.footer-column .footer-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
   color: var(--pantone-habanero-gold);
-  margin-bottom: 12px;
+  margin-bottom: var(--spacing-m);
   text-transform: uppercase;
 }
 
