@@ -162,13 +162,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectPersonas = document.getElementById('personas');
   const selectRestaurante = document.getElementById('restaurante');
   const btnBuscar = document.getElementById('btnBuscar');
+  const btnLimpiar = document.getElementById('btnLimpiar');
   const resultadoContainer = document.getElementById('resultadoContainer');
+  
+  // Elementos del resumen
+  const resumenDestino = document.getElementById('resumenDestino');
+  const resumenTipo = document.getElementById('resumenTipo');
+  const resumenRestaurante = document.getElementById('resumenRestaurante');
+  const resumenPersonas = document.getElementById('resumenPersonas');
   
   // Botones de tipo de cocina
   const botonesTypoCocina = document.querySelectorAll('.selector-btn[data-tipo]');
   let tipoCocinaSeleccionado = '';
   
   // Nombres legibles
+  const nombresDestinos = {
+    bariloche: 'Bariloche',
+    sansebastian: 'San Sebastián',
+    portland: 'Portland',
+    garda: 'Lago di Garda'
+  };
+  
   const nombresTipoCocina = {
     local: 'Cocina local',
     internacional: 'Internacional',
@@ -196,6 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (selectDestino.value) {
         actualizarSelectRestaurantes();
       }
+      
+      actualizarResumen();
     });
   });
   
@@ -245,6 +261,39 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarBotonBuscar();
   }
   
+  // Función para actualizar el resumen de selección
+  function actualizarResumen() {
+    if (!resumenDestino) return;
+    
+    const destino = selectDestino ? selectDestino.value : '';
+    const tipo = tipoCocinaSeleccionado;
+    const restaurante = selectRestaurante ? selectRestaurante.value : '';
+    const personas = selectPersonas ? selectPersonas.value : '';
+    
+    // Destino
+    resumenDestino.textContent = destino ? nombresDestinos[destino] : '--';
+    resumenDestino.classList.toggle('active', !!destino);
+    
+    // Tipo
+    resumenTipo.textContent = tipo ? nombresTipoCocina[tipo] : 'Todos';
+    resumenTipo.classList.toggle('active', !!tipo);
+    
+    // Restaurante
+    if (restaurante && destino) {
+      const data = destinosData[destino];
+      const r = data ? data.restaurantes.find(x => x.id === restaurante) : null;
+      resumenRestaurante.textContent = r ? r.nombre : '--';
+      resumenRestaurante.classList.add('active');
+    } else {
+      resumenRestaurante.textContent = '--';
+      resumenRestaurante.classList.remove('active');
+    }
+    
+    // Personas
+    resumenPersonas.textContent = personas || '--';
+    resumenPersonas.classList.toggle('active', !!personas);
+  }
+  
   // Función para validar y actualizar botón de búsqueda
   function actualizarBotonBuscar() {
     if (!btnBuscar) return;
@@ -253,6 +302,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const restauranteOk = selectRestaurante && selectRestaurante.value;
     
     btnBuscar.disabled = !(destinoOk && restauranteOk);
+  }
+  
+  // Función para limpiar todas las selecciones
+  function limpiarSelecciones() {
+    if (selectDestino) selectDestino.value = '';
+    if (selectPersonas) selectPersonas.value = '1-2';
+    if (selectRestaurante) {
+      selectRestaurante.innerHTML = '<option value="">Primero elegí un destino...</option>';
+      selectRestaurante.disabled = true;
+    }
+    
+    // Desactivar botones de tipo
+    botonesTypoCocina.forEach(btn => btn.classList.remove('active'));
+    tipoCocinaSeleccionado = '';
+    
+    // Limpiar resultado
+    if (resultadoContainer) {
+      resultadoContainer.innerHTML = `
+        <div class="resultado-placeholder">
+          <div class="placeholder-icon">🍽️</div>
+          <p>Seleccioná un destino para ver los restaurantes disponibles</p>
+        </div>
+      `;
+    }
+    
+    actualizarResumen();
+    actualizarBotonBuscar();
   }
   
   // Función para mostrar el resultado
@@ -308,6 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (selectDestino) {
     selectDestino.addEventListener('change', () => {
       actualizarSelectRestaurantes();
+      actualizarResumen();
       
       // Si se cambia el destino, limpiar resultado
       if (resultadoContainer) {
@@ -321,8 +398,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
+  if (selectPersonas) {
+    selectPersonas.addEventListener('change', actualizarResumen);
+  }
+  
   if (selectRestaurante) {
-    selectRestaurante.addEventListener('change', actualizarBotonBuscar);
+    selectRestaurante.addEventListener('change', () => {
+      actualizarBotonBuscar();
+      actualizarResumen();
+    });
   }
   
   if (btnBuscar) {
@@ -330,6 +414,13 @@ document.addEventListener('DOMContentLoaded', () => {
       mostrarResultado();
     });
   }
+  
+  if (btnLimpiar) {
+    btnLimpiar.addEventListener('click', limpiarSelecciones);
+  }
+  
+  // Inicializar resumen
+  actualizarResumen();
 
   // =======================================================
   // 🗂️ MODALES DE LUGARES
