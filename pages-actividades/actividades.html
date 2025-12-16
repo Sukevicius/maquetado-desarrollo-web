@@ -56,61 +56,104 @@
   </section>
 
   <main class="hospedaje-page">
-    <!-- Buscador -->
-    <section class="buscador-section">
-      <h2>¿Buscás actividades para disfrutar con tu mascota?</h2>
-      <p>Explorá experiencias y aventuras <em>pet friendly</em> en los mejores destinos.</p>
-      <form class="buscador-form" id="buscadorForm">
-        <div class="buscador-input">
-          <label for="destino">Destino</label>
-          <select id="destino" required>
-            <option value="">Seleccióná un destino...</option>
-            <option value="bariloche">Bariloche, Argentina</option>
-            <option value="sansebastian">San Sebastián, España</option>
-            <option value="portland">Portland, Oregón (EE.UU.)</option>
-            <option value="garda">Lago di Garda, Italia</option>
-          </select>
-        </div>
-        <div class="buscador-input">
-          <label for="tipo-actividad">Tipo de actividad</label>
-          <select id="tipo-actividad">
-            <option value="">Todas las actividades</option>
-            <option value="playas">Playas</option>
-            <option value="senderos">Senderos y trekking</option>
-            <option value="parques">Parques y dog parks</option>
-          </select>
-        </div>
-        <div class="buscador-input">
-          <label for="personas">Viajeros</label>
-          <select id="personas">
-            <option>1-2 personas</option>
-            <option>3-4 personas</option>
-            <option>Grupo grande</option>
-          </select>
-        </div>
-        <button type="submit">Buscar</button>
-      </form>
-    </section>
-
-
-
-
-    <!-- Actividades Pet Friendly por destino -->
-    <section class="mejor-epoca-section">
-      <h2>Actividades Pet Friendly recomendadas</h2>
-      <div class="tabs-epoca">
-        <button class="tab active" data-destino="bariloche">Bariloche</button>
-        <button class="tab" data-destino="sansebastian">San Sebastián</button>
-        <button class="tab" data-destino="portland">Portland</button>
-        <button class="tab" data-destino="garda">Lago di Garda</button>
+    <!-- Buscador Integrado -->
+    <section class="buscador-integrado">
+      <div class="buscador-header">
+        <h2>Buscá actividades pet friendly</h2>
+        <p>Explorá experiencias y aventuras para disfrutar con tu mascota</p>
       </div>
-      <div class="epoca-contenido">
-        <img id="epocaImagen" src="../img/bariloche.png" alt="Bariloche">
-        <ul id="epocaLista">
-          <li><strong>Senderos:</strong> Villa Coihues, Cerro Catedral - ideales para caminatas.</li>
-          <li><strong>Playas:</strong> Playa Bonita, Bahía Serena, Playa Del Viento.</li>
-          <li><strong>Tip:</strong> Llevá agua y comida para tu mascota.</li>
-        </ul>
+      
+      <div class="buscador-layout">
+        <!-- Columna Izquierda: Selectores -->
+        <div class="buscador-columna-izquierda">
+          <div class="selector-tabs-container">
+            <!-- Fila 1: Seleccionar Destino -->
+            <div class="selector-row" id="filaDestino">
+              <label class="selector-label">
+                <span class="material-symbols-outlined">location_on</span>
+                Seleccioná un destino
+              </label>
+              <select class="selector-select" id="selectDestino">
+                <option value="">Elegí tu destino...</option>
+                <option value="bariloche">Bariloche, Argentina</option>
+                <option value="sansebastian">San Sebastián, España</option>
+                <option value="portland">Portland, Oregón (EE.UU.)</option>
+                <option value="garda">Lago di Garda, Italia</option>
+              </select>
+            </div>
+            
+            <!-- Fila 2: Tipo de Actividad -->
+            <div class="selector-row" id="filaTipo">
+              <label class="selector-label">
+                <span class="material-symbols-outlined">hiking</span>
+                Tipo de actividad
+              </label>
+              <div class="selector-buttons" id="botonesActividad">
+                <button type="button" class="selector-btn" data-tipo="playas">Playas</button>
+                <button type="button" class="selector-btn" data-tipo="senderos">Senderos</button>
+                <button type="button" class="selector-btn" data-tipo="parques">Parques</button>
+                <button type="button" class="selector-btn" data-tipo="dog-parks">Dog Parks</button>
+              </div>
+            </div>
+            
+            <!-- Fila 3: Seleccionar Actividad Específica -->
+            <div class="selector-row" id="filaActividad">
+              <label class="selector-label">
+                <span class="material-symbols-outlined">explore</span>
+                Actividad específica
+              </label>
+              <select class="selector-select" id="selectActividad" disabled>
+                <option value="">Primero seleccioná un destino</option>
+              </select>
+            </div>
+            
+            <!-- Fila 4: Cantidad de personas -->
+            <div class="selector-row" id="filaPersonas">
+              <label class="selector-label">
+                <span class="material-symbols-outlined">group</span>
+                Viajeros
+              </label>
+              <select class="selector-select" id="selectPersonas">
+                <option value="1-2">1-2 personas</option>
+                <option value="3-4">3-4 personas</option>
+                <option value="grupo">Grupo grande (5+)</option>
+              </select>
+            </div>
+            
+            <!-- Botón Buscar -->
+            <button type="button" class="btn-buscar" id="btnBuscar" disabled>
+              <span class="material-symbols-outlined">search</span>
+              Buscar actividad
+            </button>
+          </div>
+        </div>
+        
+        <!-- Columna Derecha: Resumen y Resultado -->
+        <div class="buscador-columna-derecha">
+          <!-- Resumen de selección -->
+          <div class="seleccion-resumen" id="seleccionResumen">
+            <button type="button" class="resumen-btn" id="resumenDestino">--</button>
+            <span class="resumen-separador">|</span>
+            <button type="button" class="resumen-btn" id="resumenTipo">Todos</button>
+            <span class="resumen-separador">|</span>
+            <button type="button" class="resumen-btn" id="resumenActividad">--</button>
+            <span class="resumen-separador">|</span>
+            <button type="button" class="resumen-btn" id="resumenPersonas">--</button>
+            <button type="button" class="btn-limpiar-resumen" id="btnLimpiar" title="Limpiar selección">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          
+          <!-- Resultado dinámico -->
+          <div class="resultado-container" id="resultadoContainer">
+            <div class="resultado-placeholder">
+              <div class="placeholder-icon">
+                <span class="material-symbols-outlined">hiking</span>
+              </div>
+              <p>Seleccioná un destino para descubrir actividades pet friendly</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Destacados -->
