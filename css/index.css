@@ -264,10 +264,9 @@ h2 {
     scroll-behavior: smooth;
     gap: 16px;
     scroll-snap-type: x mandatory;
-    overflow-x: hidden;
-    overflow-y: hidden;
     padding: 0 1rem;
     white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
 }
 
 .slider-container .card {
@@ -329,6 +328,15 @@ h2 {
 
     .arrow {
         display: none;
+    }
+
+    .slider-container {
+        overflow-x: scroll;
+        scroll-padding: 0 1rem;
+    }
+
+    .slider-container .card {
+        scroll-snap-align: center;
     }
 }
 
