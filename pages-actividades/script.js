@@ -33,31 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Función para inicializar la interfaz
   function inicializarInterfaz() {
-    // El resto del código se ejecuta aquí
-          tipoActividad: 'playas',
-          descripcion: 'Playa tranquila en el lago Nahuel Huapi donde tu perro puede nadar libremente. Aguas cristalinas y arena suave.',
-          imagen: '../img/bariloche.png',
-          grupoPersonas: '1-2',
-          duracion: '3-4 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Toalla para el perro, juguetes acuáticos',
-          mejorEpoca: 'Verano'
-        },
-        {
-          id: 'bahia-serena',
-          nombre: 'Bahía Serena',
-          tipoActividad: 'playas',
-          descripcion: 'Aguas calmas perfectas para que tu perro aprenda a nadar. Zona segura y con poco oleaje.',
-          imagen: '../img/bariloche.png',
-          grupoPersonas: 'grupo',
-          duracion: '2-3 horas',
-          dificultad: 'Fácil',
-          requisitos: 'Chaleco salvavidas recomendado',
-          mejorEpoca: 'Verano'
-        }
-      ]
-    }
-  };
 
   // Mapeo de nombres para display
   const nombresDestinos = {

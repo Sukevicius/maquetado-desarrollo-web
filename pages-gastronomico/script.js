@@ -35,21 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Función para inicializar la interfaz
   function inicializarInterfaz() {
-    // El resto del código se ejecuta aquí
-        {
-          id: 'puntopanoramico',
-          nombre: 'Punto Panorámico',
-          tipoCocina: 'cafe',
-          descripcion: 'Cafetería con vistas espectaculares, ideal para brunch con tu perro.',
-          imagen: '../img/bariloche.png',
-          comensales: '1-2',
-          direccion: 'Circuito Chico Km 18',
-          telefono: '+54 294 448-7788',
-          email: 'reservas@puntopanoramico.com',
-          web: ''
-      }
-    ]
-    };  // =======================================================
+
+  // =======================================================
   // 🔍 BUSCADOR INTEGRADO - Lógica principal
   // =======================================================
   
