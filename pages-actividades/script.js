@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar resumen
   actualizarResumen();
 
-
+  } // Fin de inicializarInterfaz
 
   // =======================================================
   // 🗂️ MODALES DE LUGARES
@@ -364,8 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
-  } // Fin de inicializarInterfaz
 
   // =======================================================
   // 🎠 CARRUSEL DE DESTACADOS CON FLECHAS

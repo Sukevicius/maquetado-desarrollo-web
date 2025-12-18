@@ -34,7 +34,7 @@
     </div>
 
     <!-- Banner de página -->
-    <section class="page-banner" style="background-image: url('img/perroauto.png');">
+    <section class="page-banner">
         <div class="banner-overlay">
             <h1>CONTACTO</h1>
             <p>Estamos aquí para ayudarte a planificar el viaje perfecto con tu mascota</p>
@@ -51,7 +51,7 @@
                 <aside class="columna-datos">
                     <div class="datos-card">
                         <div class="datos-header">
-                            <img src="img/logo-furry-png.png" alt="Logo Furry Travels" class="datos-logo">
+                            <img src="img/logofinal.png" alt="Logo Furry Travels" class="datos-logo">
                             <h2>Furry Travels</h2>
                         </div>
                         
@@ -131,7 +131,7 @@
                             <p>Completá el formulario y nos pondremos en contacto a la brevedad</p>
                         </div>
 
-                        <form action="procesar_formulario.php" method="post" class="formulario-contacto" enctype="multipart/form-data">
+                        <form action="procesar_formulario.php" method="post" class="formulario-contacto" enctype="multipart/form-data" id="formularioContacto">
                             
                             <fieldset>
                                 <legend>Datos Personales</legend>
@@ -234,7 +234,6 @@
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6568.033654373858!2d-58.386324!3d-34.603736!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaea670d4e67%3A0x2198c954311ad6d9!2sDa%20Vinci%20%7C%20Primera%20Escuela%20de%20Arte%20Multimedial!5e0!3m2!1ses-419!2sar!4v1765477628501!5m2!1ses-419!2sar" 
                     width="100%" 
                     height="400" 
-                    style="border:0;" 
                     allowfullscreen="" 
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade"
@@ -289,6 +288,36 @@
 
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('show');
+        });
+
+        // Manejo del formulario con fallback a gracias.html
+        const formulario = document.getElementById('formularioContacto');
+        
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(formulario);
+            
+            // Intentar enviar con PHP
+            fetch('procesar_formulario.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // PHP funcionó, redirigir a gracias.html
+                    window.location.href = 'gracias.html';
+                } else {
+                    // PHP no funcionó, pero igual mostrar gracias.html
+                    console.log('PHP no disponible, mostrando página de gracias de todos modos');
+                    window.location.href = 'gracias.html';
+                }
+            })
+            .catch(error => {
+                // Error de red o PHP no disponible, mostrar gracias.html igual
+                console.log('No se pudo conectar con PHP, mostrando página de gracias de todos modos');
+                window.location.href = 'gracias.html';
+            });
         });
     </script>
 </body>
