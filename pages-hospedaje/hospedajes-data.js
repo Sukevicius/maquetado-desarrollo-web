@@ -1,4 +1,4 @@
-// =======================================================
+﻿// =======================================================
 // 📦 DATOS DE DESTINOS - HOSPEDAJES PET FRIENDLY
 // =======================================================
 // Este archivo contiene todos los datos de destinos y hospedajes
@@ -7,7 +7,7 @@
 const DESTINOS_DATA = {
   bariloche: {
     nombre: "Bariloche, Argentina",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/bariloche/bariloche-destino.jpg',
     alt: 'Bariloche',
     descripcion: 'Destino patagónico rodeado de lagos y montañas.',
     hospedajes: [
@@ -17,7 +17,7 @@ const DESTINOS_DATA = {
         tipo: 'Hostel boutique',
         tipoAlojamiento: 'hotel',
         descripcion: 'Espacios pet friendly con ambiente joven y moderno. Perfecto para viajeros con mascotas que buscan comunidad.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/bariloche/bariloche-destino.jpg',
         telefono: '+54 294 442-1234',
         email: 'reservas@selina-bariloche.com',
         direccion: 'Av. Bustillo Km 1.5, San Carlos de Bariloche',
@@ -30,7 +30,7 @@ const DESTINOS_DATA = {
         tipo: 'Hotel 4 estrellas',
         tipoAlojamiento: 'hotel',
         descripcion: 'Hotel de cadena internacional con políticas flexibles para mascotas de hasta 10kg.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/bariloche/bariloche-destino.jpg',
         telefono: '+54 294 443-5678',
         email: 'info@hamptonbariloche.com.ar',
         direccion: 'Rolando 263, San Carlos de Bariloche',
@@ -43,7 +43,7 @@ const DESTINOS_DATA = {
         tipo: 'Cabañas',
         tipoAlojamiento: 'casa',
         descripcion: 'Cabañas rodeadas de naturaleza, ideales para que tu perro corra libremente.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/bariloche/bariloche-destino.jpg',
         telefono: '+54 294 446-2020',
         email: 'reservas@pailahue.com',
         direccion: 'Av. Bustillo Km 7, San Carlos de Bariloche',
@@ -56,7 +56,7 @@ const DESTINOS_DATA = {
         tipo: 'Departamento céntrico',
         tipoAlojamiento: 'departamento',
         descripcion: 'Departamento completamente equipado en el centro, ideal para familias con mascotas.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/bariloche/bariloche-destino.jpg',
         telefono: '+54 294 445-3333',
         email: 'deptos@bariloche.com',
         direccion: 'Mitre 450, San Carlos de Bariloche',
@@ -69,7 +69,7 @@ const DESTINOS_DATA = {
         tipo: 'Casa con vista al lago',
         tipoAlojamiento: 'casa',
         descripcion: 'Hermosa casa frente al lago Nahuel Huapi, perfecta para vacaciones con mascotas.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/bariloche/bariloche-destino.jpg',
         telefono: '+54 294 448-7777',
         email: 'casadellago@gmail.com',
         direccion: 'Av. Bustillo Km 12, San Carlos de Bariloche',
@@ -80,7 +80,7 @@ const DESTINOS_DATA = {
   },
   sanmartin: {
     nombre: "San Martín de los Andes, Argentina",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/san-martin-andes/san-martin-andes-destino.jpg',
     alt: 'San Martín de los Andes',
     descripcion: 'Destino patagónico con lagos cristalinos y montañas. Ideal para mascotas.',
     hospedajes: [
@@ -90,7 +90,7 @@ const DESTINOS_DATA = {
         tipo: 'Resort 5 estrellas',
         tipoAlojamiento: 'hotel',
         descripcion: 'Resort de montaña con políticas pet friendly y acceso a senderos naturales.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/san-martin-andes/san-martin-andes-destino.jpg',
         telefono: '+54 2972 427-000',
         email: 'chapelco@loisuites.com.ar',
         direccion: 'Ruta 234 Km 4, San Martín de los Andes',
@@ -103,7 +103,7 @@ const DESTINOS_DATA = {
         tipo: 'Cabañas',
         tipoAlojamiento: 'casa',
         descripcion: 'Cabañas con jardín privado, perfectas para viajar con mascotas de cualquier tamaño.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/san-martin-andes/san-martin-andes-destino.jpg',
         telefono: '+54 2972 428-100',
         email: 'info@vegamaipu.com',
         direccion: 'Av. Vega Maipú 850, San Martín de los Andes',
@@ -114,17 +114,17 @@ const DESTINOS_DATA = {
   },
   angostura: {
     nombre: "Villa La Angostura, Argentina",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/villa-la-angostura/villa-la-angostura-destino.jpg',
     alt: 'Villa La Angostura',
     descripcion: 'Pintoresco pueblo de montaña con bosques y lagos. Muy pet friendly.',
     hospedajes: [
       { 
         id: 'hosteria-angostura',
-        nombre: 'Hostería Las Balsas', 
-        tipo: 'Hostería boutique',
+        nombre: 'Hoster\u00eda Las Balsas', 
+        tipo: 'Hoster\u00eda boutique',
         tipoAlojamiento: 'hotel',
-        descripcion: 'Hostería de lujo a orillas del lago Nahuel Huapi que acepta mascotas.',
-        imagen: '../img/bariloche.png',
+        descripcion: 'Hoster\u00eda de lujo a orillas del lago Nahuel Huapi que acepta mascotas.',
+        imagen: '../img/img-destinos/villa-la-angostura/villa-la-angostura-destino.jpg',
         telefono: '+54 2944 494-308',
         email: 'info@lasbalsas.com',
         direccion: 'Bahía Las Balsas, Villa La Angostura',
@@ -137,7 +137,7 @@ const DESTINOS_DATA = {
         tipo: 'Cabañas',
         tipoAlojamiento: 'casa',
         descripcion: 'Cabañas rodeadas de bosque nativo, ideales para mascotas aventureras.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/villa-la-angostura/villa-la-angostura-destino.jpg',
         telefono: '+54 2944 495-200',
         email: 'arrayanes@cabanas.com',
         direccion: 'Los Arrayanes 120, Villa La Angostura',
@@ -148,7 +148,7 @@ const DESTINOS_DATA = {
   },
   elbolson: {
     nombre: "El Bolsón, Argentina",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/el-bolson/el-bolson-destino.jpg',
     alt: 'El Bolsón',
     descripcion: 'Valle rodeado de montañas, famoso por su feria artesanal y espíritu hippie.',
     hospedajes: [
@@ -158,7 +158,7 @@ const DESTINOS_DATA = {
         tipo: 'Posada ecológica',
         tipoAlojamiento: 'hotel',
         descripcion: 'Posada con filosofía sustentable que ama a las mascotas.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/el-bolson/el-bolson-destino.jpg',
         telefono: '+54 2944 492-550',
         email: 'losjuncos@posada.com',
         direccion: 'Av. Belgrano 1200, El Bolsón',
@@ -171,7 +171,7 @@ const DESTINOS_DATA = {
         tipo: 'Cabañas rurales',
         tipoAlojamiento: 'casa',
         descripcion: 'Cabañas con amplio terreno, perfectas para que tu perro corra libre.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/el-bolson/el-bolson-destino.jpg',
         telefono: '+54 2944 493-400',
         email: 'rucahueney@gmail.com',
         direccion: 'Ruta 40 Km 1880, El Bolsón',
@@ -182,7 +182,7 @@ const DESTINOS_DATA = {
   },
   sanrafael: {
     nombre: "San Rafael, Mendoza, Argentina",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/san-rafael/san-rafael-destino.jpg',
     alt: 'San Rafael',
     descripcion: 'Oasis en el desierto con diques, ríos y bodegas. Ideal para paseos con mascotas.',
     hospedajes: [
@@ -192,7 +192,7 @@ const DESTINOS_DATA = {
         tipo: 'Cabañas',
         tipoAlojamiento: 'casa',
         descripcion: 'Cabañas cerca del dique con jardines amplios para mascotas.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/san-rafael/san-rafael-destino.jpg',
         telefono: '+54 260 442-2100',
         email: 'vallegrande@cabanas.com',
         direccion: 'Valle Grande, San Rafael',
@@ -203,7 +203,7 @@ const DESTINOS_DATA = {
   },
   belgrano: {
     nombre: "Villa General Belgrano, Córdoba, Argentina",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/villa-general-belgrano/villa-general-belgrano-destino.jpg',
     alt: 'Villa General Belgrano',
     descripcion: 'Pueblo de montaña con arquitectura alemana. Muy tranquilo y pet friendly.',
     hospedajes: [
@@ -213,7 +213,7 @@ const DESTINOS_DATA = {
         tipo: 'Posada boutique',
         tipoAlojamiento: 'hotel',
         descripcion: 'Posada familiar que recibe mascotas con mucho cariño.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/villa-general-belgrano/villa-general-belgrano-destino.jpg',
         telefono: '+54 3546 463-200',
         email: 'posadadelsauce@vgb.com',
         direccion: 'Av. San Martín 500, Villa Gral. Belgrano',
@@ -226,7 +226,7 @@ const DESTINOS_DATA = {
         tipo: 'Cabañas',
         tipoAlojamiento: 'casa',
         descripcion: 'Cabañas en las sierras con terreno vallado.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/villa-general-belgrano/villa-general-belgrano-destino.jpg',
         telefono: '+54 3546 464-100',
         email: 'serranas@vgb.com',
         direccion: 'Los Troncos 234, Villa Gral. Belgrano',
@@ -237,7 +237,7 @@ const DESTINOS_DATA = {
   },
   tandil: {
     nombre: "Tandil, Buenos Aires, Argentina",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/tandil/tandil-destino.jpg',
     alt: 'Tandil',
     descripcion: 'Ciudad serrana con parques, sierras y ambiente tranquilo. Ideal para mascotas.',
     hospedajes: [
@@ -247,7 +247,7 @@ const DESTINOS_DATA = {
         tipo: 'Hotel 4 estrellas',
         tipoAlojamiento: 'hotel',
         descripcion: 'Hotel moderno con políticas pet friendly y cerca de parques.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/tandil/tandil-destino.jpg',
         telefono: '+54 249 442-2000',
         email: 'reservas@mulenhotel.com',
         direccion: 'Av. España 750, Tandil',
@@ -260,7 +260,7 @@ const DESTINOS_DATA = {
         tipo: 'Cabañas',
         tipoAlojamiento: 'casa',
         descripcion: 'Cabañas con vista a las sierras y jardín para mascotas.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/tandil/tandil-destino.jpg',
         telefono: '+54 249 443-3000',
         email: 'serranas@tandil.com',
         direccion: 'Av. Don Bosco 1200, Tandil',
@@ -271,7 +271,7 @@ const DESTINOS_DATA = {
   },
   mardlaspampas: {
     nombre: "Mar de las Pampas, Buenos Aires, Argentina",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/mar-de-las-pampas/mar-de-las-pampas-destino.jpg',
     alt: 'Mar de las Pampas',
     descripcion: 'Balneario rodeado de bosque con playas habilitadas para perros.',
     hospedajes: [
@@ -281,7 +281,7 @@ const DESTINOS_DATA = {
         tipo: 'Cabañas boutique',
         tipoAlojamiento: 'casa',
         descripcion: 'Cabañas de diseño en el bosque, muy cerca de la playa canina.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/mar-de-las-pampas/mar-de-las-pampas-destino.jpg',
         telefono: '+54 2255 479-200',
         email: 'boutique@mardlaspampas.com',
         direccion: 'Calle 7 entre 12 y 14, Mar de las Pampas',
@@ -294,7 +294,7 @@ const DESTINOS_DATA = {
         tipo: 'Hotel boutique',
         tipoAlojamiento: 'hotel',
         descripcion: 'Hotel especializado en recibir familias con mascotas.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/mar-de-las-pampas/mar-de-las-pampas-destino.jpg',
         telefono: '+54 2255 478-100',
         email: 'paradise@hotelpet.com',
         direccion: 'Av. 3 y Calle 10, Mar de las Pampas',
@@ -524,7 +524,7 @@ const DESTINOS_DATA = {
   },
   colonia: {
     nombre: "Colonia del Sacramento, Uruguay",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/colonia-del-sacramento/colonia-del-sacramento-destino.jpg',
     alt: 'Colonia del Sacramento',
     descripcion: 'Ciudad histórica uruguaya a orillas del Río de la Plata. Muy pet friendly.',
     hospedajes: [
@@ -534,7 +534,7 @@ const DESTINOS_DATA = {
         tipo: 'Hotel boutique',
         tipoAlojamiento: 'hotel',
         descripcion: 'Hotel de diseño en el barrio histórico que acepta mascotas.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/colonia-del-sacramento/colonia-del-sacramento-destino.jpg',
         telefono: '+598 4522-2554',
         email: 'info@charcohotel.com',
         direccion: 'San José 163, Colonia del Sacramento',
@@ -547,7 +547,7 @@ const DESTINOS_DATA = {
         tipo: 'Posada histórica',
         tipoAlojamiento: 'hotel',
         descripcion: 'Posada colonial que recibe mascotas en el corazón del casco antiguo.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/colonia-del-sacramento/colonia-del-sacramento-destino.jpg',
         telefono: '+598 4522-3193',
         email: 'plazamayor@colonia.com.uy',
         direccion: 'Del Comercio 111, Colonia del Sacramento',
@@ -558,7 +558,7 @@ const DESTINOS_DATA = {
   },
   florianopolis: {
     nombre: "Florianópolis, Brasil",
-    imagen: '../img/bariloche.png',
+    imagen: '../img/img-destinos/florianopolis/florianopolis-destino.jpg',
     alt: 'Florianópolis',
     descripcion: 'Isla con más de 40 playas, varias habilitadas para perros. Muy pet friendly.',
     hospedajes: [
@@ -568,7 +568,7 @@ const DESTINOS_DATA = {
         tipo: 'Hotel boutique',
         tipoAlojamiento: 'hotel',
         descripcion: 'Posada frente al mar que acepta mascotas de cualquier tamaño.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/florianopolis/florianopolis-destino.jpg',
         telefono: '+55 48 3232-5000',
         email: 'pousadadoschas@floripa.com.br',
         direccion: 'Rua das Gaivotas 254, Lagoa da Conceição',
@@ -581,7 +581,7 @@ const DESTINOS_DATA = {
         tipo: 'Casa de playa',
         tipoAlojamiento: 'casa',
         descripcion: 'Casa con jardín cerca de playa dog-friendly.',
-        imagen: '../img/bariloche.png',
+        imagen: '../img/img-destinos/florianopolis/florianopolis-destino.jpg',
         telefono: '+55 48 3233-4000',
         email: 'casanapraia@floripa.com.br',
         direccion: 'Praia Mole, Florianópolis',

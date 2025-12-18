@@ -1,15 +1,15 @@
-{
+﻿{
   "destinos": {
     "bariloche": {
       "nombre": "Bariloche (Río Negro), Argentina",
-      "imagen": "../img/img-destinos/Bariloche (Río Negro)/Bariloche (Río Negro).jpg",
+      "imagen": "../img/img-destinos/bariloche/bariloche-destino.jpg",
       "restaurantes": [
         {
           "id": "maleza",
           "nombre": "Maleza",
           "tipoCocina": "local",
           "descripcion": "Restaurante con cocina patagónica contemporánea. Terraza pet-friendly con vistas al lago.",
-          "imagen": "../img/img-destinos/Bariloche (Río Negro)/Bariloche (Río Negro).jpg",
+          "imagen": "../img/img-destinos/bariloche/bariloche-destino.jpg",
           "comensales": "1-2",
           "direccion": "Mitre 698",
           "telefono": "+54 294 442 8888",
@@ -21,7 +21,7 @@
           "nombre": "Cervecería Bachmann",
           "tipoCocina": "cerveceria",
           "descripcion": "Cervecería artesanal con patio. Ambiente familiar y pet-friendly.",
-          "imagen": "../img/img-destinos/Bariloche (Río Negro)/Bariloche (Río Negro).jpg",
+          "imagen": "../img/img-destinos/bariloche/bariloche-destino.jpg",
           "comensales": "grupo",
           "direccion": "Av. Bustillo Km 11.5",
           "telefono": "+54 294 447 0505",
@@ -32,14 +32,14 @@
     },
     "sanmartin": {
       "nombre": "San Martín de los Andes (Neuquén), Argentina",
-      "imagen": "../img/img-destinos/San Martín de los Andes (Neuquén)/San Martín de los Andes (Neuquén).jpg",
+      "imagen": "../img/img-destinos/san-martin-andes/san-martin-andes-destino.jpg",
       "restaurantes": [
         {
           "id": "torino-bar",
           "nombre": "Torino Bar & Bistro",
           "tipoCocina": "internacional",
           "descripcion": "Bistro moderno con terraza exterior. Menú variado y ambiente acogedor para ir con mascotas.",
-          "imagen": "../img/img-destinos/San Martín de los Andes (Neuquén)/San Martín de los Andes (Neuquén).jpg",
+          "imagen": "../img/img-destinos/san-martin-andes/san-martin-andes-destino.jpg",
           "comensales": "1-2",
           "direccion": "Av. San Martín 855",
           "telefono": "+54 2972 428 663",
@@ -50,14 +50,14 @@
     },
     "villaangostura": {
       "nombre": "Villa La Angostura (Neuquén), Argentina",
-      "imagen": "../img/img-destinos/Villa La Angostura (Neuquén)/Villa La Angostura (Neuquén).jpg",
+      "imagen": "../img/img-destinos/villa-angostura/villa-angostura-destino.jpg",
       "restaurantes": [
         {
           "id": "tinto-bistro",
           "nombre": "Tinto Bistró",
           "tipoCocina": "italiana",
           "descripcion": "Bistró de montaña con terraza. Cocina contemporánea y ambiente relajado pet-friendly.",
-          "imagen": "../img/img-destinos/Villa La Angostura (Neuquén)/Villa La Angostura (Neuquén).jpg",
+          "imagen": "../img/img-destinos/villa-angostura/villa-angostura-destino.jpg",
           "comensales": "1-2",
           "direccion": "Av. Arrayanes 157",
           "telefono": "+54 2944 494 948",
@@ -68,14 +68,14 @@
     },
     "elbolson": {
       "nombre": "El Bolsón (Río Negro), Argentina",
-      "imagen": "../img/img-destinos/El Bolsón/El Bolsón.jpg",
+      "imagen": "../img/img-destinos/el-bolson/el-bolson-destino.jpg",
       "restaurantes": [
         {
           "id": "cerveceria-el-bolson",
           "nombre": "Cervecería El Bolsón",
           "tipoCocina": "cerveceria",
           "descripcion": "Cervecería artesanal con patio al aire libre. Música en vivo y ambiente relajado con mascotas.",
-          "imagen": "../img/img-destinos/El Bolsón/El Bolsón.jpg",
+          "imagen": "../img/img-destinos/el-bolson/el-bolson-destino.jpg",
           "comensales": "3-4",
           "direccion": "RN 40 Km 1935",
           "telefono": "+54 294 449 2595",
@@ -86,14 +86,14 @@
     },
     "sanrafael": {
       "nombre": "San Rafael (Mendoza), Argentina",
-      "imagen": "../img/img-destinos/San Rafael/San Rafael.jpg",
+      "imagen": "../img/img-destinos/san-rafael/san-rafael-destino.jpg",
       "restaurantes": [
         {
           "id": "resto-sanrafael",
           "nombre": "Restaurante La Posta",
           "tipoCocina": "local",
           "descripcion": "Parrilla tradicional mendocina con patio. Especialidad en carnes a la parrilla.",
-          "imagen": "../img/img-destinos/San Rafael/San Rafael.jpg",
+          "imagen": "../img/img-destinos/san-rafael/san-rafael-destino.jpg",
           "comensales": "grupo",
           "direccion": "Av. Hipólito Yrigoyen 234",
           "telefono": "+54 260 442 3456",
@@ -104,14 +104,14 @@
     },
     "villageneralbelgrano": {
       "nombre": "Villa General Belgrano (Córdoba), Argentina",
-      "imagen": "../img/img-destinos/Villa General Belgrano (Córdoba)/Villa General Belgrano3.jpg",
+      "imagen": "../img/img-destinos/villa-belgrano/villa-belgrano-destino.jpg",
       "restaurantes": [
         {
           "id": "cerveceria-blest",
           "nombre": "Cervecería Blest",
           "tipoCocina": "cerveceria",
           "descripcion": "Cervecería artesanal con patio amplio. Cocina alemana y cervezas artesanales.",
-          "imagen": "../img/img-destinos/Villa General Belgrano (Córdoba)/Villa General Belgrano3.jpg",
+          "imagen": "../img/img-destinos/villa-belgrano/villa-belgrano-destino.jpg",
           "comensales": "3-4",
           "direccion": "Av. San Martín 205",
           "telefono": "+54 3546 462 448",
@@ -122,14 +122,14 @@
     },
     "tandil": {
       "nombre": "Tandil (Buenos Aires), Argentina",
-      "imagen": "../img/img-destinos/Tandil (Buenos Aires)/Tandil (Buenos Aires).jpg",
+      "imagen": "../img/img-destinos/tandil/tandil-destino.jpg",
       "restaurantes": [
         {
           "id": "cerveceria-tandil",
           "nombre": "Cervecería Épocas",
           "tipoCocina": "cerveceria",
           "descripcion": "Cervecería artesanal con patio gastronómico. Ambiente familiar pet-friendly.",
-          "imagen": "../img/img-destinos/Tandil (Buenos Aires)/Tandil (Buenos Aires).jpg",
+          "imagen": "../img/img-destinos/tandil/tandil-destino.jpg",
           "comensales": "grupo",
           "direccion": "9 de Julio 628",
           "telefono": "+54 249 442 8765",
@@ -140,14 +140,14 @@
     },
     "mardelaspampas": {
       "nombre": "Mar de las Pampas (Buenos Aires), Argentina",
-      "imagen": "../img/img-destinos/Mar de las Pampas/Mar de las Pampas.jpg",
+      "imagen": "../img/img-destinos/mar-pampas/mar-pampas-destino.jpg",
       "restaurantes": [
         {
           "id": "resto-mar-pampas",
           "nombre": "Restaurante La Lucila",
           "tipoCocina": "internacional",
           "descripcion": "Restaurante con deck exterior. Cocina contemporánea y ambiente relajado pet-friendly.",
-          "imagen": "../img/img-destinos/Mar de las Pampas/Mar de las Pampas.jpg",
+          "imagen": "../img/img-destinos/mar-pampas/mar-pampas-destino.jpg",
           "comensales": "1-2",
           "direccion": "Av. Lucila del Mar 126",
           "telefono": "+54 2255 479 567",
@@ -158,14 +158,14 @@
     },
     "colonia": {
       "nombre": "Colonia del Sacramento, Uruguay",
-      "imagen": "../img/img-destinos/Colonia del Sacramento (Uruguay)/Colonia del Sacramento (Uruguay).jpg",
+      "imagen": "../img/img-destinos/colonia-sacramento/colonia-sacramento-destino.jpg",
       "restaurantes": [
         {
           "id": "cafe-colonial",
           "nombre": "Café Colonial",
           "tipoCocina": "internacional",
           "descripcion": "Café histórico con mesas en la calle. Ambiente bohemio y pet-friendly.",
-          "imagen": "../img/img-destinos/Colonia del Sacramento (Uruguay)/Colonia del Sacramento (Uruguay).jpg",
+          "imagen": "../img/img-destinos/colonia-sacramento/colonia-sacramento-destino.jpg",
           "comensales": "1-2",
           "direccion": "Vasconcellos 167",
           "telefono": "+598 4522 5492",
@@ -176,14 +176,14 @@
     },
     "florianopolis": {
       "nombre": "Florianópolis, Brasil",
-      "imagen": "../img/img-destinos/Florianópolis (Brasil)/Florianópolis (Brasil).jpg",
+      "imagen": "../img/img-destinos/florianopolis/florianopolis-destino.jpg",
       "restaurantes": [
         {
           "id": "bar-do-arante",
           "nombre": "Bar do Arante",
           "tipoCocina": "local",
           "descripcion": "Restaurante tradicional en Costa da Lagoa. Especialidad en pescados y mariscos. Terraza pet-friendly.",
-          "imagen": "../img/img-destinos/Florianópolis (Brasil)/Florianópolis (Brasil).jpg",
+          "imagen": "../img/img-destinos/florianopolis/florianopolis-destino.jpg",
           "comensales": "grupo",
           "direccion": "Costa da Lagoa s/n",
           "telefono": "+55 48 3232 0197",
@@ -194,3 +194,4 @@
     }
   }
 }
+

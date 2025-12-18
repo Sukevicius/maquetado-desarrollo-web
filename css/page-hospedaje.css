@@ -43,6 +43,7 @@
   padding: 16px;
   transition: flex 0.5s ease;
   position: relative;
+  text-decoration: none;
 }
 
 .servicios-header .accordion-item::before {
@@ -55,13 +56,12 @@
   background: linear-gradient(to top, rgba(255, 208, 76, 0.9), transparent);
 }
 
-.servicios-header .accordion-item a {
+.servicios-header .accordion-item span {
   position: relative;
   z-index: 1;
   color: var(--pantone-blue-iolite);
   font-weight: bold;
   font-size: 1.2rem;
-  text-decoration: none;
   text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
 }
 
@@ -77,9 +77,35 @@
   background: linear-gradient(to top, rgba(243, 91, 49, 0.8), transparent);
 }
 
-.servicios-header .accordion-item.active a {
+.servicios-header .accordion-item.active span {
   color: var(--color-white);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Imágenes de fondo específicas para cada sección */
+.servicios-header .accordion-item.hospedaje {
+  background-image: url('../img/dalmatahotel.png');
+}
+
+.servicios-header .accordion-item.gastronomia {
+  background-image: url('../img/salchiDepto.png');
+}
+
+.servicios-header .accordion-item.actividades {
+  background-image: url('../img/grandanesCasa.png');
+}
+
+/* Imágenes de fondo para banners de página */
+.page-banner.hospedaje-banner {
+  background-image: url('../img/dalmatahotel.png');
+}
+
+.page-banner.gastronomia-banner {
+  background-image: url('../img/salchiDepto.png');
+}
+
+.page-banner.actividades-banner {
+  background-image: url('../img/grandanesCasa.png');
 }
 
 @media (max-width: 768px) {
@@ -389,8 +415,7 @@
 .slider-wrapper {
   position: relative;
   width: 100%;
-  /* overflow: hidden; */
-  padding: 1rem;
+  padding: 2rem 3rem;
 }
 
 .slider-container {
@@ -422,31 +447,51 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: var(--pantone-habanero-gold);
   border: none;
-  font-size: 1.2rem;
-  /* más chico que el botón */
+  font-size: 2rem;
   line-height: 1;
   padding: 0;
-  color: black;
+  color: var(--pantone-blue-iolite);
   border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   z-index: 10;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-
 .arrow.left {
-  left: -15px;
+  left: 10px;
 }
 
 .arrow.right {
-  right: -15px;
+  right: 10px;
+}
+
+/* Estados deshabilitados - PRIMERO para establecer la base */
+.arrow:disabled,
+.arrow.disabled,
+.arrow[disabled],
+button.arrow:disabled,
+button.arrow.disabled {
+  background-color: #ccc !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+  opacity: 0.5 !important;
+  pointer-events: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Hover solo cuando NO está disabled */
+.arrow:not([disabled]):not(.disabled):not(:disabled):hover {
+  background-color: var(--pantone-mandarin-orange) !important;
+  transform: translateY(-50%) scale(1.1) !important;
 }
 
 @media (max-width: 1024px) {
@@ -494,6 +539,16 @@
 
   .cardText p {
     font-size: 0.85rem;
+  }
+
+  .slider-wrapper {
+    padding: 1rem 0;
+  }
+
+  .arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
   }
 }
 
@@ -658,8 +713,8 @@
 
 .temporada-badge {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 340px;
+  left: 440px;
   background: var(--pantone-mandarin-orange);
   color: var(--color-white);
   padding: 10px 20px;
@@ -1181,14 +1236,17 @@
 .resultado-imagen {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 400px;
   flex-shrink: 0;
+  overflow: hidden;
+  background-color: #f5f5f5;
 }
 
 .resultado-imagen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .resultado-info {
@@ -1510,7 +1568,7 @@
 
 @media (max-width: 900px) {
   .resultado-imagen {
-    height: 200px;
+    height: 250px;
   }
 }
 

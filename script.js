@@ -31,12 +31,67 @@ document.addEventListener('DOMContentLoaded', () => {
   // Slider con flechas
   if (cardSlider && prevBtn && nextBtn) {
     const scrollAmount = 300;
+    
+    // Función para actualizar el estado de las flechas
+    const updateArrows = () => {
+      const scrollLeft = Math.round(cardSlider.scrollLeft);
+      const scrollWidth = cardSlider.scrollWidth;
+      const clientWidth = cardSlider.clientWidth;
+      const maxScroll = scrollWidth - clientWidth;
+      
+      console.log('ScrollLeft:', scrollLeft, 'MaxScroll:', maxScroll, 'Diff:', maxScroll - scrollLeft);
+      
+      // Deshabilitar flecha izquierda si está al inicio
+      if (scrollLeft <= 1) {
+        prevBtn.classList.add('disabled');
+        prevBtn.disabled = true;
+        prevBtn.setAttribute('disabled', 'true');
+      } else {
+        prevBtn.classList.remove('disabled');
+        prevBtn.disabled = false;
+        prevBtn.removeAttribute('disabled');
+      }
+      
+      // Deshabilitar flecha derecha si está al final
+      // Tolerancia mayor porque el scroll por card puede dejar espacios
+      if (scrollLeft >= maxScroll - 25) {
+        nextBtn.classList.add('disabled');
+        nextBtn.disabled = true;
+        nextBtn.setAttribute('disabled', 'true');
+        console.log('Flecha derecha deshabilitada');
+      } else {
+        nextBtn.classList.remove('disabled');
+        nextBtn.disabled = false;
+        nextBtn.removeAttribute('disabled');
+      }
+    };
+    
+    // Actualizar al cargar (con delay para asegurar que el DOM esté listo)
+    setTimeout(updateArrows, 100);
+    
+    // Actualizar al hacer scroll
+    cardSlider.addEventListener('scroll', updateArrows);
+    
+    // Eventos de clic en las flechas con actualización posterior
     prevBtn.addEventListener('click', () => {
-      cardSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      if (!prevBtn.disabled && !prevBtn.classList.contains('disabled')) {
+        cardSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        // Actualizar después del scroll suave
+        setTimeout(updateArrows, 400);
+      }
     });
 
     nextBtn.addEventListener('click', () => {
-      cardSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      if (!nextBtn.disabled && !nextBtn.classList.contains('disabled')) {
+        cardSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        // Actualizar después del scroll suave
+        setTimeout(updateArrows, 400);
+      }
+    });
+    
+    // Actualizar al cambiar el tamaño de la ventana
+    window.addEventListener('resize', () => {
+      setTimeout(updateArrows, 100);
     });
   }
 

@@ -255,16 +255,16 @@ h2 {
     position: relative;
     width: 100%;
     overflow: visible;
-    /* padding: 2rem 1rem; */
+    padding: 2rem 3rem;
 }
 
 .slider-container {
     display: flex;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    gap: 16px;
+    gap: 24px;
     scroll-snap-type: x mandatory;
-    padding: 1rem;
+    padding: 0;
     white-space: nowrap;
 }
 
@@ -273,7 +273,7 @@ h2 {
     flex-direction: column;
     height: auto;
     flex: 0 0 auto;
-    width: 250px;
+    width: 280px;
     max-width: 90%;
     scroll-snap-align: start;
     background-color: var(--pantone-muskmelon);
@@ -285,31 +285,51 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--pantone-habanero-gold);
     border: none;
-    font-size: 1.2rem;
-    /* más chico que el botón */
+    font-size: 2rem;
     line-height: 1;
     padding: 0;
-    color: black;
+    color: var(--pantone-blue-iolite);
     border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     z-index: 10;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-
 .arrow.left {
-    left: 0;
+    left: 10px;
 }
 
 .arrow.right {
-    right: 0;
+    right: 10px;
+}
+
+/* Estados deshabilitados - PRIMERO para establecer la base */
+.arrow:disabled,
+.arrow.disabled,
+.arrow[disabled],
+button.arrow:disabled,
+button.arrow.disabled {
+    background-color: #ccc !important;
+    color: #666 !important;
+    cursor: not-allowed !important;
+    opacity: 0.5 !important;
+    pointer-events: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-50%) !important;
+}
+
+/* Hover solo cuando NO está disabled */
+.arrow:not([disabled]):not(.disabled):not(:disabled):hover {
+    background-color: var(--pantone-mandarin-orange) !important;
+    transform: translateY(-50%) scale(1.1) !important;
 }
 
 @media (max-width: 1024px) {
@@ -325,27 +345,52 @@ h2 {
         border: none;
     }
 
+    .slider-wrapper {
+        padding: 1rem 0;
+    }
+
     .arrow {
         display: flex;
-        width: 32px;
-        height: 32px;
-        font-size: 1.5rem;
-        padding: 4px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+        padding: 0;
+        background-color: rgba(255, 208, 76, 0.95);
+    }
+
+    .arrow.left {
+        left: 2px;
+    }
+
+    .arrow.right {
+        right: 2px;
+    }
+
+    /* Estados disabled en mobile */
+    .arrow:disabled,
+    .arrow.disabled,
+    .arrow.left:disabled,
+    .arrow.left.disabled,
+    .arrow.right:disabled,
+    .arrow.right.disabled {
+        background-color: #ccc !important;
+        color: #666 !important;
     }
 
     .slider-container {
         overflow-x: scroll;
-        scroll-padding: 0 1rem;
-        gap: 16px;
-        padding: 0 1rem;
+        scroll-padding: 0 50px;
+        gap: 12px;
+        padding: 0 45px;
         -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
     }
 
     .slider-container .card {
-        scroll-snap-align: start;
-        width: 75vw;
+        scroll-snap-align: center;
+        width: calc(100vw - 100px);
         min-width: 260px;
-        max-width: 320px;
+        max-width: 300px;
         flex-shrink: 0;
     }
 }
@@ -390,13 +435,13 @@ h2 {
     align-items: flex-end;
     justify-content: center;
     position: relative;
+    text-decoration: none;
 }
 
-.accordion-item a {
+.accordion-item span {
     background-color: rgba(255, 208, 76, 0.7);
     color: var(--color-white);
     padding: 1rem;
-    text-decoration: none;
     font-size: 1.5rem;
     width: 100%;
     text-align: center;
@@ -404,6 +449,19 @@ h2 {
 
 .accordion-item:hover {
     flex: 3;
+}
+
+/* Imágenes de fondo específicas para cada sección */
+.accordion-item.hospedaje {
+    background-image: url('../img/dalmatahotel.png');
+}
+
+.accordion-item.gastronomia {
+    background-image: url('../img/salchiDepto.png');
+}
+
+.accordion-item.actividades {
+    background-image: url('../img/grandanesCasa.png');
 }
 
 /* =====================
