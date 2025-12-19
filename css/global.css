@@ -421,6 +421,13 @@ button {
   font-weight: var(--font-weight-bold);
   color: var(--pantone-blue-iolite);
   margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.header-sticky-bar .logo .logo-text:hover {
+  opacity: 0.8;
 }
 /* Estilos generales para menús de navegación */
 nav.menu ul {
