@@ -1,0 +1,52 @@
+======================================
+   TRABAJO PRÁCTICO - FURRY TRAVELS
+======================================
+
+DATOS DE LA ALUMNA:
+-------------------
+Nombre: Sukevicius Samanta
+DNI: 32.584.131
+
+DATOS ACADÉMICOS:
+-----------------
+Materia: Maquetado y Desarrollo Web
+Comisión: DWN1AP
+Profesor: Carlos Ferrer
+Institución: Escuela Da Vinci
+Año: 2025
+Cuatrimestre: 1°
+
+REPOSITORIO GITHUB:
+-------------------
+URL: https://github.com/Sukevicius/maquetado-desarrollo-web
+
+PARA VER EL PROYECTO ONLINE (GitHub Pages):
+--------------------------------------------
+Si está habilitado GitHub Pages, el proyecto se puede ver en:
+https://sukevicius.github.io/maquetado-desarrollo-web/
+
+DESCRIPCIÓN DEL PROYECTO:
+-------------------------
+Sitio web "Furry Travels" - Plataforma de viajes pet friendly que ofrece
+información sobre destinos, hospedajes, gastronomía y actividades para 
+viajar con mascotas.
+
+PÁGINAS PRINCIPALES:
+--------------------
+- index.html - Página principal
+- contacto.html - Formulario de contacto
+- gracias.html - Página de agradecimiento
+- pages-hospedaje/hospedaje.html - Sección de alojamientos
+- pages-gastronomico/gastronomia.html - Sección de gastronomía
+- pages-actividades/actividades.html - Sección de actividades
+- pages-lugares/bariloche.html - Detalle de destino
+
+TECNOLOGÍAS UTILIZADAS:
+-----------------------
+- HTML5
+- CSS3
+- JavaScript
+- PHP (para formulario de contacto)
+- Material Symbols (iconos)
+
+======================================
