@@ -114,7 +114,7 @@ const DESTINOS_DATA = {
   },
   angostura: {
     nombre: "Villa La Angostura, Argentina",
-    imagen: '../img/img-destinos/villa-la-angostura/villa-la-angostura-destino.jpg',
+    imagen: '../img/img-destinos/villa-angostura/villa-angostura-destino.jpg',
     alt: 'Villa La Angostura',
     descripcion: 'Pintoresco pueblo de montaña con bosques y lagos. Muy pet friendly.',
     hospedajes: [
@@ -124,7 +124,7 @@ const DESTINOS_DATA = {
         tipo: 'Hoster\u00eda boutique',
         tipoAlojamiento: 'hotel',
         descripcion: 'Hoster\u00eda de lujo a orillas del lago Nahuel Huapi que acepta mascotas.',
-        imagen: '../img/img-destinos/villa-la-angostura/villa-la-angostura-destino.jpg',
+        imagen: '../img/img-destinos/villa-angostura/villa-angostura-destino.jpg',
         telefono: '+54 2944 494-308',
         email: 'info@lasbalsas.com',
         direccion: 'Bahía Las Balsas, Villa La Angostura',
@@ -137,7 +137,7 @@ const DESTINOS_DATA = {
         tipo: 'Cabañas',
         tipoAlojamiento: 'casa',
         descripcion: 'Cabañas rodeadas de bosque nativo, ideales para mascotas aventureras.',
-        imagen: '../img/img-destinos/villa-la-angostura/villa-la-angostura-destino.jpg',
+        imagen: '../img/img-destinos/villa-angostura/villa-angostura-destino.jpg',
         telefono: '+54 2944 495-200',
         email: 'arrayanes@cabanas.com',
         direccion: 'Los Arrayanes 120, Villa La Angostura',
